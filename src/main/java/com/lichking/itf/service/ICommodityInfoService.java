@@ -15,4 +15,5 @@ public interface ICommodityInfoService {
 	public int updateComByPKSelective(CommodityInfoPOJO com);
 	
 	public int deleteComByPK(Integer comid);
+	
 }

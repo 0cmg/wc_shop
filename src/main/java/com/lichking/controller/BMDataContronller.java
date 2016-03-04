@@ -13,9 +13,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lichking.itf.service.ICommodityInfoService;
 import com.lichking.itf.service.ICommodityTypeService;
+import com.lichking.pojo.ComIMPOJO;
 import com.lichking.pojo.CommodityInfoPOJO;
 import com.lichking.pojo.CommodityTypePOJO;
+import com.lichking.pojo.OptionPOJO;
 import com.lichking.pojo.ResultPOJO;
+import com.lichking.pojo.co.SimpleComPOJO;
 
 /**
  * 用于前后台的数据交互
@@ -109,7 +112,7 @@ public class BMDataContronller {
 			String[] urls = img_url.split(";");
 			c.setImageurl(urls[0]);
 			c.setDescdetails("");
-			c.setType("");
+			//c.setType("");
 		}
 		if(list.size() > 0){
 			result.setMsg("查询成功");
@@ -169,6 +172,93 @@ public class BMDataContronller {
 			result.setResult(false);
 			result.setMsg("查询失败");
 		}
+		return result;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	@RequestMapping("/ComOnOff")
+	public @ResponseBody ResultPOJO editComStatus(@RequestBody OptionPOJO op){
+		log.info("请求：/back/data/ComOnOff");
+		ResultPOJO result = new ResultPOJO();
+		Integer comid_need = op.getId();
+		CommodityInfoPOJO com = this.commodityInfoService.selectByPK(comid_need);
+		Byte com_status = com.getIsonline();
+		if(com_status == 0 && op.getO().equals("online")){
+			log.info("请求商品上架操作");
+			CommodityInfoPOJO new_com = new CommodityInfoPOJO();
+			Byte b = 1;
+			new_com.setIsonline(b);
+			new_com.setCommodityid(comid_need);
+			int r = this.commodityInfoService.updateComByPKSelective(new_com);
+			if (r ==1){
+				log.info("操作成功");
+				result.setMsg("操作成功");
+				result.setResult(true);
+			}else{
+				log.info("操作失败");
+				result.setMsg("操作失败");
+				result.setResult(false);
+			}
+		}else if(com_status == 1 && op.getO().equals("offline")){
+			log.info("请求商品下架操作");
+			CommodityInfoPOJO new_com = new CommodityInfoPOJO();
+			Byte b = 0;
+			new_com.setIsonline(b);
+			new_com.setCommodityid(comid_need);
+			int r = this.commodityInfoService.updateComByPKSelective(new_com);
+			if (r ==1){
+				log.info("操作成功");
+				result.setMsg("操作成功");
+				result.setResult(true);
+			}else{
+				log.info("操作失败");
+				result.setMsg("操作失败");
+				result.setResult(false);
+			}
+		}else{
+			log.info("操作错误");
+			result.setMsg("操作错误");
+			result.setResult(false);
+		}
+		return result;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	@RequestMapping("/ComIM")
+	public @ResponseBody ResultPOJO vComIM(@RequestBody ComIMPOJO comim){
+		log.info("请求：/back/data/ComIM");
+		ResultPOJO result = new ResultPOJO();
+		
+		String op = comim.getOp();
+		List<SimpleComPOJO> list = comim.getList();
+		if(op.equals("addI")){
+			log.info("库存add操作");
+			for(SimpleComPOJO scom : list){
+				Integer comid = scom.getCommodityid();
+				CommodityInfoPOJO com = this.commodityInfoService.selectByPK(comid);
+				log.info("原库存："+com.getRestno()+" 需添加数量："+scom.getNumber());
+				Integer new_no = com.getRestno()+scom.getNumber();
+				com.setRestno(new_no);
+				this.commodityInfoService.updateComByPKSelective(com);
+			}
+			result.setMsg("操作成功");
+			result.setResult(true);
+		}else if(op.equals("setI")){
+			log.info("库存set操作");
+			for(SimpleComPOJO scom : list){
+				Integer comid = scom.getCommodityid();
+				CommodityInfoPOJO com = this.commodityInfoService.selectByPK(comid);
+				com.setRestno(scom.getNumber());
+				this.commodityInfoService.updateComByPKSelective(com);
+			}
+			result.setMsg("操作成功");
+			result.setResult(true);
+		}else{
+			log.info("请求操作符异常 请检查");
+			result.setMsg("请求操作符异常 请检查");
+			result.setResult(false);
+		}
+		
 		return result;
 	}
 	

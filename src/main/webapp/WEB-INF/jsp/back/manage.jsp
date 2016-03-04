@@ -90,9 +90,8 @@
 					<li><a data="comoverview" href="ComOverview" data-toggle="modal" data-target="#modal" >商品总览</a></li>
 					<li><a data="createtype" href="CreateNewType" data-toggle="modal" data-target="#modal" >新增类型</a></li>
 					<li><a data="createcom" href="CreateNewCom" data-toggle="modal" data-target="#modal">新增商品</a></li>
-					<li><a href="">上架商品</a></li>
-					<li><a href="">下架商品</a></li>
-					<li><a href="">货源管理</a></li>
+					<li><a data="comonoff" href="ComOnAndOff" data-toggle="modal" data-target="#modal">上下架商品</a></li>
+					<li><a data="comim" href="ComInventoryManage" data-toggle="modal" data-target="#modal">货源管理</a></li>
 				</ul></li>
 			<li><a><span class="icon color9"><i class="fa fa-th"></i></span>订单操作<span
 					class="caret"></span></a>
