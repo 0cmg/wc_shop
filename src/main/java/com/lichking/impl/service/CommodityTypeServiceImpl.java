@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.lichking.itf.dao.ICommodityTypeDAO;
 import com.lichking.itf.service.ICommodityTypeService;
-import com.lichking.pojo.CommodityTypePOJO;
+import com.lichking.pojo.web.CommodityTypePOJO;
 
 @Service("CommodityTypeService")
 public class CommodityTypeServiceImpl implements ICommodityTypeService {

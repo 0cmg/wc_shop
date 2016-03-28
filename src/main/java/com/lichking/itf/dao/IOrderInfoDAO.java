@@ -1,6 +1,6 @@
 package com.lichking.itf.dao;
 
-import com.lichking.pojo.OrderInfoPOJO;
+import com.lichking.pojo.web.OrderInfoPOJO;
 
 public interface IOrderInfoDAO {
     int deleteByPrimaryKey(String orderno);

@@ -1,8 +1,8 @@
-package com.lichking.pojo;
+package com.lichking.pojo.web;
 
 import java.util.List;
 
-import com.lichking.pojo.co.SimpleComPOJO;
+import com.lichking.pojo.web.co.SimpleComPOJO;
 
 /**
  * 用于前后台 商品库存操作的对象

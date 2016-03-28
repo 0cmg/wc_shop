@@ -1,4 +1,4 @@
-package com.lichking.pojo;
+package com.lichking.pojo.web;
 
 public class CommodityInfoPOJO {
     private Integer commodityid;

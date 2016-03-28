@@ -1,4 +1,4 @@
-package com.lichking.pojo.co;
+package com.lichking.pojo.web.co;
 
 public class SimpleComPOJO {
 

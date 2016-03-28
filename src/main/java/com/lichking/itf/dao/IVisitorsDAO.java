@@ -1,6 +1,6 @@
 package com.lichking.itf.dao;
 
-import com.lichking.pojo.VisitorsPOJO;
+import com.lichking.pojo.web.VisitorsPOJO;
 
 public interface IVisitorsDAO {
     int deleteByPrimaryKey(Integer id);

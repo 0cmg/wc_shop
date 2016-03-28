@@ -37,6 +37,7 @@ $("#com_load").bind("click",function(){
     	    	{'user.username':name,'user.age':age});
     	    	}, 
     	    	*/
+        'buttonClass' : 'btn btn-default btn-upload',
         //flash
         'swf': "/wc_shop/uploadify/uploadify.swf",
          //文件选择后的容器div的id值 
@@ -46,6 +47,7 @@ $("#com_load").bind("click",function(){
         //上传地址
        	'uploader':'/wc_shop/back/upload/uploadImage',
        //'uploader':'/wc_shop/test/testupload',
+       	
        	'buttonText':'选择文件',
         //浏览将要上传文件按钮的背景图片路径
        // 'buttonImage':'/wc_shop/uploadify/background.jpg',

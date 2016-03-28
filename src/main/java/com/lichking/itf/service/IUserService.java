@@ -1,6 +1,6 @@
 package com.lichking.itf.service;
 
-import com.lichking.pojo.UserPOJO;
+import com.lichking.pojo.web.UserPOJO;
 
 public interface IUserService {
 

@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lichking.itf.service.IUserService;
-import com.lichking.pojo.ResultPOJO;
-import com.lichking.pojo.UserPOJO;
+import com.lichking.pojo.web.ResultPOJO;
+import com.lichking.pojo.web.UserPOJO;
 import com.lichking.util.session.UserJudge;
 
 /**

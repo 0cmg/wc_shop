@@ -2,7 +2,7 @@ package com.lichking.itf.dao;
 
 import java.util.List;
 
-import com.lichking.pojo.CommodityTypePOJO;
+import com.lichking.pojo.web.CommodityTypePOJO;
 
 public interface ICommodityTypeDAO {
     int deleteByPrimaryKey(Integer id);

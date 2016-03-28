@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.alibaba.fastjson.JSONObject;
 import com.lichking.itf.service.ICommodityTypeService;
-import com.lichking.pojo.CommodityTypePOJO;
+import com.lichking.pojo.web.CommodityTypePOJO;
 import com.lichking.util.json.ResponseUtil;
 
 

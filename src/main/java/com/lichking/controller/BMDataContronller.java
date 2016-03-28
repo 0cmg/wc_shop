@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lichking.itf.service.ICommodityInfoService;
 import com.lichking.itf.service.ICommodityTypeService;
-import com.lichking.pojo.ComIMPOJO;
-import com.lichking.pojo.CommodityInfoPOJO;
-import com.lichking.pojo.CommodityTypePOJO;
-import com.lichking.pojo.OptionPOJO;
-import com.lichking.pojo.ResultPOJO;
-import com.lichking.pojo.co.SimpleComPOJO;
+import com.lichking.pojo.web.ComIMPOJO;
+import com.lichking.pojo.web.CommodityInfoPOJO;
+import com.lichking.pojo.web.CommodityTypePOJO;
+import com.lichking.pojo.web.OptionPOJO;
+import com.lichking.pojo.web.ResultPOJO;
+import com.lichking.pojo.web.co.SimpleComPOJO;
 
 /**
  * 用于前后台的数据交互

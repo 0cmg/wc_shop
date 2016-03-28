@@ -1,6 +1,6 @@
 package com.lichking.itf.dao;
 
-import com.lichking.pojo.UserPOJO;
+import com.lichking.pojo.web.UserPOJO;
 
 public interface IUserDAO {
     int deleteByPrimaryKey(String username);

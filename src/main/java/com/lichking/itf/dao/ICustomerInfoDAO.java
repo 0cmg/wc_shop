@@ -1,6 +1,6 @@
 package com.lichking.itf.dao;
 
-import com.lichking.pojo.CustomerInfoPOJO;
+import com.lichking.pojo.web.CustomerInfoPOJO;
 
 public interface ICustomerInfoDAO {
     int deleteByPrimaryKey(Integer id);
