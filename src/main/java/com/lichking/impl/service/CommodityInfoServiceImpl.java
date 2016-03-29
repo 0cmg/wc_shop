@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.lichking.itf.dao.ICommodityInfoDAO;
 import com.lichking.itf.service.ICommodityInfoService;
-import com.lichking.pojo.web.CommodityInfoPOJO;
+import com.lichking.pojo.web.CommodityInfoVO;
 
 @Service("CommodityInfoService")
 public class CommodityInfoServiceImpl implements ICommodityInfoService {
@@ -17,22 +17,22 @@ public class CommodityInfoServiceImpl implements ICommodityInfoService {
 	private ICommodityInfoDAO iCommodityInfoDAO;
 	
 	@Override
-	public int insertComWithNull(CommodityInfoPOJO com) {
+	public int insertComWithNull(CommodityInfoVO com) {
 		return this.iCommodityInfoDAO.insertSelective(com);
 	}
 
 	@Override
-	public List<CommodityInfoPOJO> selectByWhere(CommodityInfoPOJO com) {
+	public List<CommodityInfoVO> selectByWhere(CommodityInfoVO com) {
 		return this.iCommodityInfoDAO.selectByWhere(com);
 	}
 
 	@Override
-	public CommodityInfoPOJO selectByPK(Integer comid) {
+	public CommodityInfoVO selectByPK(Integer comid) {
 		return this.iCommodityInfoDAO.selectByPrimaryKey(comid);
 	}
 
 	@Override
-	public int updateComByPKSelective(CommodityInfoPOJO com) {
+	public int updateComByPKSelective(CommodityInfoVO com) {
 		return this.iCommodityInfoDAO.updateByPrimaryKeySelective(com);
 	}
 

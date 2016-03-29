@@ -2,7 +2,7 @@ package com.lichking.pojo.web;
 
 import java.util.Date;
 
-public class OrderInfoPOJO {
+public class OrderInfoVO {
     private String orderno;
 
     private Date dealdate;

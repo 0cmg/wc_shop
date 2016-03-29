@@ -1,6 +1,6 @@
 package com.lichking.pojo.web;
 
-public class CommodityTypePOJO {
+public class CommodityTypeVO {
     private Integer id;
 
     private String type;

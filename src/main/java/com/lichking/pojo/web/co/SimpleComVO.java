@@ -1,6 +1,6 @@
 package com.lichking.pojo.web.co;
 
-public class SimpleComPOJO {
+public class SimpleComVO {
 
 	public Integer getCommodityid() {
 		return commodityid;

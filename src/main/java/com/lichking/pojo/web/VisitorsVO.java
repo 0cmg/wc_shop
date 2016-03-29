@@ -2,7 +2,7 @@ package com.lichking.pojo.web;
 
 import java.util.Date;
 
-public class VisitorsPOJO {
+public class VisitorsVO {
     private Integer id;
 
     private Date date;

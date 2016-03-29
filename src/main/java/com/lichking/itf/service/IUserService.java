@@ -1,9 +1,9 @@
 package com.lichking.itf.service;
 
-import com.lichking.pojo.web.UserPOJO;
+import com.lichking.pojo.web.UserVO;
 
 public interface IUserService {
 
-	public UserPOJO getUser(String username);
+	public UserVO getUser(String username);
 	
 }

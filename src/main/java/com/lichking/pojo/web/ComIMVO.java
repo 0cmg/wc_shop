@@ -2,14 +2,14 @@ package com.lichking.pojo.web;
 
 import java.util.List;
 
-import com.lichking.pojo.web.co.SimpleComPOJO;
+import com.lichking.pojo.web.co.SimpleComVO;
 
 /**
  * 用于前后台 商品库存操作的对象
  * @author LichKing
  *
  */
-public class ComIMPOJO {
+public class ComIMVO {
 
 	public String getOp() {
 		return op;
@@ -23,13 +23,13 @@ public class ComIMPOJO {
 
 
 
-	public List<SimpleComPOJO> getList() {
+	public List<SimpleComVO> getList() {
 		return list;
 	}
 
 
 
-	public void setList(List<SimpleComPOJO> list) {
+	public void setList(List<SimpleComVO> list) {
 		this.list = list;
 	}
 
@@ -37,7 +37,7 @@ public class ComIMPOJO {
 
 	private String op;
 	
-	private List<SimpleComPOJO> list;
+	private List<SimpleComVO> list;
 	
 	
 	

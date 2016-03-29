@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.lichking.itf.dao.ICommodityTypeDAO;
 import com.lichking.itf.service.ICommodityTypeService;
-import com.lichking.pojo.web.CommodityTypePOJO;
+import com.lichking.pojo.web.CommodityTypeVO;
 
 @Service("CommodityTypeService")
 public class CommodityTypeServiceImpl implements ICommodityTypeService {
@@ -17,12 +17,12 @@ public class CommodityTypeServiceImpl implements ICommodityTypeService {
 	private ICommodityTypeDAO commodityTypeDAO;
 	
 	@Override
-	public List<CommodityTypePOJO> getAllTypes() {
+	public List<CommodityTypeVO> getAllTypes() {
 		return this.commodityTypeDAO.selectAll();
 	}
 
 	@Override
-	public int insertComType(CommodityTypePOJO type) {
+	public int insertComType(CommodityTypeVO type) {
 		return this.commodityTypeDAO.insert(type);
 	}
 	

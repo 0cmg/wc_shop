@@ -1,6 +1,6 @@
 package com.lichking.pojo.web;
 
-public class ExpressInfoPOJO {
+public class ExpressInfoVO {
     private Integer id;
 
     private String orderno;

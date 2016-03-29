@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lichking.itf.dao.ICommodityInfoDAO" >
-  <resultMap id="BaseResultMap" type="com.lichking.pojo.CommodityInfoPOJO" >
+  <resultMap id="BaseResultMap" type="com.lichking.pojo.web.CommodityInfoVO" >
     <id column="commodityID" property="commodityid" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="descSimple" property="descsimple" jdbcType="VARCHAR" />
@@ -23,7 +23,7 @@
     from CommodityInfo
     where commodityID = #{commodityid,jdbcType=INTEGER}
   </select>
-  <select id="selectByWhere" resultMap="BaseResultMap" parameterType="com.lichking.pojo.CommodityInfoPOJO">
+  <select id="selectByWhere" resultMap="BaseResultMap" parameterType="com.lichking.pojo.web.CommodityInfoVO">
   	select 
     <include refid="Base_Column_List" />
     from CommodityInfo
@@ -54,7 +54,7 @@
     delete from CommodityInfo
     where commodityID = #{commodityid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.lichking.pojo.CommodityInfoPOJO" >
+  <insert id="insert" parameterType="com.lichking.pojo.web.CommodityInfoVO" >
     insert into CommodityInfo (commodityID, name, descSimple, 
       imageUrl, price, descDetails, 
       sellNo, type, isOnline, 
@@ -64,7 +64,7 @@
       #{sellno,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{isonline,jdbcType=TINYINT}, 
       #{restno,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.lichking.pojo.CommodityInfoPOJO" >
+  <insert id="insertSelective" parameterType="com.lichking.pojo.web.CommodityInfoVO" >
     insert into CommodityInfo
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="commodityid != null" >
@@ -131,7 +131,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.lichking.pojo.CommodityInfoPOJO" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.lichking.pojo.web.CommodityInfoVO" >
     update CommodityInfo
     <set >
       <if test="name != null" >
@@ -164,7 +164,7 @@
     </set>
     where commodityID = #{commodityid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.lichking.pojo.CommodityInfoPOJO" >
+  <update id="updateByPrimaryKey" parameterType="com.lichking.pojo.web.CommodityInfoVO" >
     update CommodityInfo
     set name = #{name,jdbcType=VARCHAR},
       descSimple = #{descsimple,jdbcType=VARCHAR},

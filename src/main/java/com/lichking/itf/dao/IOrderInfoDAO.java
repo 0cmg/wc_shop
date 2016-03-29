@@ -1,17 +1,17 @@
 package com.lichking.itf.dao;
 
-import com.lichking.pojo.web.OrderInfoPOJO;
+import com.lichking.pojo.web.OrderInfoVO;
 
 public interface IOrderInfoDAO {
     int deleteByPrimaryKey(String orderno);
 
-    int insert(OrderInfoPOJO record);
+    int insert(OrderInfoVO record);
 
-    int insertSelective(OrderInfoPOJO record);
+    int insertSelective(OrderInfoVO record);
 
-    OrderInfoPOJO selectByPrimaryKey(String orderno);
+    OrderInfoVO selectByPrimaryKey(String orderno);
 
-    int updateByPrimaryKeySelective(OrderInfoPOJO record);
+    int updateByPrimaryKeySelective(OrderInfoVO record);
 
-    int updateByPrimaryKey(OrderInfoPOJO record);
+    int updateByPrimaryKey(OrderInfoVO record);
 }

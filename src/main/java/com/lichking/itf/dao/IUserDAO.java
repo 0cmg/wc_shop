@@ -1,17 +1,17 @@
 package com.lichking.itf.dao;
 
-import com.lichking.pojo.web.UserPOJO;
+import com.lichking.pojo.web.UserVO;
 
 public interface IUserDAO {
     int deleteByPrimaryKey(String username);
 
-    int insert(UserPOJO record);
+    int insert(UserVO record);
 
-    int insertSelective(UserPOJO record);
+    int insertSelective(UserVO record);
 
-    UserPOJO selectByPrimaryKey(String username);
+    UserVO selectByPrimaryKey(String username);
 
-    int updateByPrimaryKeySelective(UserPOJO record);
+    int updateByPrimaryKeySelective(UserVO record);
 
-    int updateByPrimaryKey(UserPOJO record);
+    int updateByPrimaryKey(UserVO record);
 }

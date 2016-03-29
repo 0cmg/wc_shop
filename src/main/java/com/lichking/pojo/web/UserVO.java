@@ -1,6 +1,6 @@
 package com.lichking.pojo.web;
 
-public class UserPOJO {
+public class UserVO {
     private String username;
 
     private String password;

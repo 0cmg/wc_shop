@@ -1,6 +1,6 @@
 package com.lichking.pojo.web;
 
-public class ResultPOJO<T> {
+public class ResultVO<T> {
 
 	public boolean isResult() {
 		return result;

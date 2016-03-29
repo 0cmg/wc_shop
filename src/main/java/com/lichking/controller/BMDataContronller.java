@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lichking.itf.service.ICommodityInfoService;
 import com.lichking.itf.service.ICommodityTypeService;
-import com.lichking.pojo.web.ComIMPOJO;
-import com.lichking.pojo.web.CommodityInfoPOJO;
-import com.lichking.pojo.web.CommodityTypePOJO;
-import com.lichking.pojo.web.OptionPOJO;
-import com.lichking.pojo.web.ResultPOJO;
-import com.lichking.pojo.web.co.SimpleComPOJO;
+import com.lichking.pojo.web.ComIMVO;
+import com.lichking.pojo.web.CommodityInfoVO;
+import com.lichking.pojo.web.CommodityTypeVO;
+import com.lichking.pojo.web.OptionVO;
+import com.lichking.pojo.web.ResultVO;
+import com.lichking.pojo.web.co.SimpleComVO;
 
 /**
  * 用于前后台的数据交互
@@ -44,10 +44,10 @@ public class BMDataContronller {
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping(value="/getAllTypes")
-	public @ResponseBody ResultPOJO<List> getAllCommodityTypes(HttpServletResponse res) throws Exception{
+	public @ResponseBody ResultVO<List> getAllCommodityTypes(HttpServletResponse res) throws Exception{
 		log.info("请求json数据：/back/data/getAllTypes");
 		
-		ResultPOJO result = getTypes();
+		ResultVO result = getTypes();
 		return result;
 	}
 	
@@ -59,16 +59,16 @@ public class BMDataContronller {
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping("/addTypes")
-	public @ResponseBody ResultPOJO<List> addCommodityTypes(HttpServletResponse res,@RequestBody CommodityTypePOJO type){
+	public @ResponseBody ResultVO<List> addCommodityTypes(HttpServletResponse res,@RequestBody CommodityTypeVO type){
 		log.info("添加商品类型：/back/data/addTypes");
 		if(canAdd(type)){
 			this.commodityTypeService.insertComType(type);
-			ResultPOJO result = getTypes();
+			ResultVO result = getTypes();
 			result.setMsg("新增商品成功!");
 			log.info("新增商品成功!");
 			return result;
 		}
-		ResultPOJO result = new ResultPOJO<>();
+		ResultVO result = new ResultVO<>();
 		result.setMsg("该商品类型已存在！新增失败！");
 		result.setResult(false);
 		log.info("该商品类型已存在！新增失败！");
@@ -82,10 +82,10 @@ public class BMDataContronller {
 	 */
 	@SuppressWarnings("rawtypes")
 	@RequestMapping("/addCom")
-	public @ResponseBody ResultPOJO addCommodity(@RequestBody CommodityInfoPOJO com){
+	public @ResponseBody ResultVO addCommodity(@RequestBody CommodityInfoVO com){
 		log.info("请求/back/data/addCom");
 		int r = this.commodityInfoService.insertComWithNull(com);
-		ResultPOJO result = new ResultPOJO<>();
+		ResultVO result = new ResultVO<>();
 		if(r == 1){
 			result.setMsg("新增商品成功");
 			result.setResult(true);
@@ -103,11 +103,11 @@ public class BMDataContronller {
 	 */
 	@SuppressWarnings("rawtypes")
 	@RequestMapping("/queryComByWhere")
-	public @ResponseBody ResultPOJO<List> queryComByWhere(@RequestBody CommodityInfoPOJO com){
+	public @ResponseBody ResultVO<List> queryComByWhere(@RequestBody CommodityInfoVO com){
 		log.info("请求:/back/data/queryComByWhere");
-		List<CommodityInfoPOJO> list = this.commodityInfoService.selectByWhere(com);
-		ResultPOJO<List> result = new ResultPOJO<List>();
-		for(CommodityInfoPOJO c : list){
+		List<CommodityInfoVO> list = this.commodityInfoService.selectByWhere(com);
+		ResultVO<List> result = new ResultVO<List>();
+		for(CommodityInfoVO c : list){
 			String img_url = c.getImageurl();
 			String[] urls = img_url.split(";");
 			c.setImageurl(urls[0]);
@@ -126,10 +126,10 @@ public class BMDataContronller {
 	}
 	
 	@RequestMapping("/queryComByPK")
-	public @ResponseBody ResultPOJO<CommodityInfoPOJO> getComByPK(@RequestBody Integer comid){
+	public @ResponseBody ResultVO<CommodityInfoVO> getComByPK(@RequestBody Integer comid){
 		log.info("请求:/back/data/queryComByPK");
-		CommodityInfoPOJO com = this.commodityInfoService.selectByPK(comid);
-		ResultPOJO<CommodityInfoPOJO> result = new ResultPOJO<CommodityInfoPOJO>();
+		CommodityInfoVO com = this.commodityInfoService.selectByPK(comid);
+		ResultVO<CommodityInfoVO> result = new ResultVO<CommodityInfoVO>();
 		if(!com.getName().equals("") && com.getName() != null){
 			result.setResult(true);
 			result.setMsg("查询成功");
@@ -143,11 +143,11 @@ public class BMDataContronller {
 	
 	@SuppressWarnings("rawtypes")
 	@RequestMapping("/updateComByPKSelective")
-	public @ResponseBody ResultPOJO updateCom(@RequestBody CommodityInfoPOJO com){
+	public @ResponseBody ResultVO updateCom(@RequestBody CommodityInfoVO com){
 		log.info("请求路径：/back/data/updateComByPKSelective");
 		int r = this.commodityInfoService.updateComByPKSelective(com);
 		System.out.println(r);
-		ResultPOJO result = new ResultPOJO();
+		ResultVO result = new ResultVO();
 		if(r == 1){
 			result.setMsg("更新商品成功");
 			result.setResult(true);
@@ -161,10 +161,10 @@ public class BMDataContronller {
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping("/deleteComByPK")
-	public @ResponseBody ResultPOJO<CommodityInfoPOJO> deleteComByPK(@RequestBody Integer comid){
+	public @ResponseBody ResultVO<CommodityInfoVO> deleteComByPK(@RequestBody Integer comid){
 		log.info("请求:/back/data/deleteComByPK");
 		int r = this.commodityInfoService.deleteComByPK(comid);
-		ResultPOJO result = new ResultPOJO();
+		ResultVO result = new ResultVO();
 		if(r == 1){
 			result.setResult(true);
 			result.setMsg("删除成功");
@@ -177,15 +177,15 @@ public class BMDataContronller {
 	
 	@SuppressWarnings("rawtypes")
 	@RequestMapping("/ComOnOff")
-	public @ResponseBody ResultPOJO editComStatus(@RequestBody OptionPOJO op){
+	public @ResponseBody ResultVO editComStatus(@RequestBody OptionVO op){
 		log.info("请求：/back/data/ComOnOff");
-		ResultPOJO result = new ResultPOJO();
+		ResultVO result = new ResultVO();
 		Integer comid_need = op.getId();
-		CommodityInfoPOJO com = this.commodityInfoService.selectByPK(comid_need);
+		CommodityInfoVO com = this.commodityInfoService.selectByPK(comid_need);
 		Byte com_status = com.getIsonline();
 		if(com_status == 0 && op.getO().equals("online")){
 			log.info("请求商品上架操作");
-			CommodityInfoPOJO new_com = new CommodityInfoPOJO();
+			CommodityInfoVO new_com = new CommodityInfoVO();
 			Byte b = 1;
 			new_com.setIsonline(b);
 			new_com.setCommodityid(comid_need);
@@ -201,7 +201,7 @@ public class BMDataContronller {
 			}
 		}else if(com_status == 1 && op.getO().equals("offline")){
 			log.info("请求商品下架操作");
-			CommodityInfoPOJO new_com = new CommodityInfoPOJO();
+			CommodityInfoVO new_com = new CommodityInfoVO();
 			Byte b = 0;
 			new_com.setIsonline(b);
 			new_com.setCommodityid(comid_need);
@@ -225,17 +225,17 @@ public class BMDataContronller {
 	
 	@SuppressWarnings("rawtypes")
 	@RequestMapping("/ComIM")
-	public @ResponseBody ResultPOJO vComIM(@RequestBody ComIMPOJO comim){
+	public @ResponseBody ResultVO vComIM(@RequestBody ComIMVO comim){
 		log.info("请求：/back/data/ComIM");
-		ResultPOJO result = new ResultPOJO();
+		ResultVO result = new ResultVO();
 		
 		String op = comim.getOp();
-		List<SimpleComPOJO> list = comim.getList();
+		List<SimpleComVO> list = comim.getList();
 		if(op.equals("addI")){
 			log.info("库存add操作");
-			for(SimpleComPOJO scom : list){
+			for(SimpleComVO scom : list){
 				Integer comid = scom.getCommodityid();
-				CommodityInfoPOJO com = this.commodityInfoService.selectByPK(comid);
+				CommodityInfoVO com = this.commodityInfoService.selectByPK(comid);
 				log.info("原库存："+com.getRestno()+" 需添加数量："+scom.getNumber());
 				Integer new_no = com.getRestno()+scom.getNumber();
 				com.setRestno(new_no);
@@ -245,9 +245,9 @@ public class BMDataContronller {
 			result.setResult(true);
 		}else if(op.equals("setI")){
 			log.info("库存set操作");
-			for(SimpleComPOJO scom : list){
+			for(SimpleComVO scom : list){
 				Integer comid = scom.getCommodityid();
-				CommodityInfoPOJO com = this.commodityInfoService.selectByPK(comid);
+				CommodityInfoVO com = this.commodityInfoService.selectByPK(comid);
 				com.setRestno(scom.getNumber());
 				this.commodityInfoService.updateComByPKSelective(com);
 			}
@@ -267,9 +267,9 @@ public class BMDataContronller {
 	 * @return
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public ResultPOJO<List> getTypes(){
-		List<CommodityTypePOJO> c_list = this.commodityTypeService.getAllTypes();
-		ResultPOJO result = new ResultPOJO<>();
+	public ResultVO<List> getTypes(){
+		List<CommodityTypeVO> c_list = this.commodityTypeService.getAllTypes();
+		ResultVO result = new ResultVO<>();
 		result.setMsg("");
 		result.setResult(true);
 		result.setT(c_list);
@@ -283,11 +283,11 @@ public class BMDataContronller {
 	 * @return
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public boolean canAdd(CommodityTypePOJO type){
-		ResultPOJO result = getTypes();
+	public boolean canAdd(CommodityTypeVO type){
+		ResultVO result = getTypes();
 		//log.info(type.getType());
-		List<CommodityTypePOJO> list = (List<CommodityTypePOJO>) result.getT();
-		for(CommodityTypePOJO t : list){
+		List<CommodityTypeVO> list = (List<CommodityTypeVO>) result.getT();
+		for(CommodityTypeVO t : list){
 			//log.info(t.getType());
 			if(t.getType().equals(type.getType())){
 				return false;

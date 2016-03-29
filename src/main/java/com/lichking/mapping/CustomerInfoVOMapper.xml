@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lichking.itf.dao.ICustomerInfoDAO" >
-  <resultMap id="BaseResultMap" type="com.lichking.pojo.CustomerInfoPOJO" >
+  <resultMap id="BaseResultMap" type="com.lichking.pojo.web.CustomerInfoVO" >
     <id column="Id" property="id" jdbcType="INTEGER" />
     <result column="appId" property="appid" jdbcType="VARCHAR" />
     <result column="phoneNo" property="phoneno" jdbcType="VARCHAR" />
@@ -20,13 +20,13 @@
     delete from CustomerInfo
     where Id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.lichking.pojo.CustomerInfoPOJO" >
+  <insert id="insert" parameterType="com.lichking.pojo.web.CustomerInfoVO" >
     insert into CustomerInfo (Id, appId, phoneNo, 
       address)
     values (#{id,jdbcType=INTEGER}, #{appid,jdbcType=VARCHAR}, #{phoneno,jdbcType=VARCHAR}, 
       #{address,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.lichking.pojo.CustomerInfoPOJO" >
+  <insert id="insertSelective" parameterType="com.lichking.pojo.web.CustomerInfoVO" >
     insert into CustomerInfo
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.lichking.pojo.CustomerInfoPOJO" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.lichking.pojo.web.CustomerInfoVO" >
     update CustomerInfo
     <set >
       <if test="appid != null" >
@@ -72,7 +72,7 @@
     </set>
     where Id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.lichking.pojo.CustomerInfoPOJO" >
+  <update id="updateByPrimaryKey" parameterType="com.lichking.pojo.web.CustomerInfoVO" >
     update CustomerInfo
     set appId = #{appid,jdbcType=VARCHAR},
       phoneNo = #{phoneno,jdbcType=VARCHAR},

@@ -1,4 +1,4 @@
-package com.lichking.util;
+package com.lichking.util.wechat;
 
 import java.security.MessageDigest;
 import java.util.Arrays;

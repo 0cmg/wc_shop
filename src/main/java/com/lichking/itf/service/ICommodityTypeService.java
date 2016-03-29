@@ -2,13 +2,13 @@ package com.lichking.itf.service;
 
 import java.util.List;
 
-import com.lichking.pojo.web.CommodityTypePOJO;
+import com.lichking.pojo.web.CommodityTypeVO;
 
 public interface ICommodityTypeService {
 
-	public List<CommodityTypePOJO> getAllTypes();
+	public List<CommodityTypeVO> getAllTypes();
 	
-	public int insertComType(CommodityTypePOJO type);
+	public int insertComType(CommodityTypeVO type);
 
 	
 }

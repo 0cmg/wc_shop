@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lichking.itf.dao.IExpressInfoDAO" >
-  <resultMap id="BaseResultMap" type="com.lichking.pojo.ExpressInfoPOJO" >
+  <resultMap id="BaseResultMap" type="com.lichking.pojo.web.ExpressInfoVO" >
     <id column="Id" property="id" jdbcType="INTEGER" />
     <result column="orderNo" property="orderno" jdbcType="VARCHAR" />
     <result column="expressType" property="expresstype" jdbcType="VARCHAR" />
@@ -20,13 +20,13 @@
     delete from ExpressInfo
     where Id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.lichking.pojo.ExpressInfoPOJO" >
+  <insert id="insert" parameterType="com.lichking.pojo.web.ExpressInfoVO" >
     insert into ExpressInfo (Id, orderNo, expressType, 
       expressNo)
     values (#{id,jdbcType=INTEGER}, #{orderno,jdbcType=VARCHAR}, #{expresstype,jdbcType=VARCHAR}, 
       #{expressno,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.lichking.pojo.ExpressInfoPOJO" >
+  <insert id="insertSelective" parameterType="com.lichking.pojo.web.ExpressInfoVO" >
     insert into ExpressInfo
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.lichking.pojo.ExpressInfoPOJO" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.lichking.pojo.web.ExpressInfoVO" >
     update ExpressInfo
     <set >
       <if test="orderno != null" >
@@ -72,7 +72,7 @@
     </set>
     where Id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.lichking.pojo.ExpressInfoPOJO" >
+  <update id="updateByPrimaryKey" parameterType="com.lichking.pojo.web.ExpressInfoVO" >
     update ExpressInfo
     set orderNo = #{orderno,jdbcType=VARCHAR},
       expressType = #{expresstype,jdbcType=VARCHAR},

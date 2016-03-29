@@ -2,20 +2,20 @@ package com.lichking.itf.dao;
 
 import java.util.List;
 
-import com.lichking.pojo.web.CommodityTypePOJO;
+import com.lichking.pojo.web.CommodityTypeVO;
 
 public interface ICommodityTypeDAO {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(CommodityTypePOJO record);
+    int insert(CommodityTypeVO record);
 
-    int insertSelective(CommodityTypePOJO record);
+    int insertSelective(CommodityTypeVO record);
 
-    CommodityTypePOJO selectByPrimaryKey(Integer id);
+    CommodityTypeVO selectByPrimaryKey(Integer id);
     
-    List<CommodityTypePOJO> selectAll();
+    List<CommodityTypeVO> selectAll();
 
-    int updateByPrimaryKeySelective(CommodityTypePOJO record);
+    int updateByPrimaryKeySelective(CommodityTypeVO record);
 
-    int updateByPrimaryKey(CommodityTypePOJO record);
+    int updateByPrimaryKey(CommodityTypeVO record);
 }

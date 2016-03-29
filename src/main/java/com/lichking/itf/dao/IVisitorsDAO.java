@@ -1,17 +1,17 @@
 package com.lichking.itf.dao;
 
-import com.lichking.pojo.web.VisitorsPOJO;
+import com.lichking.pojo.web.VisitorsVO;
 
 public interface IVisitorsDAO {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(VisitorsPOJO record);
+    int insert(VisitorsVO record);
 
-    int insertSelective(VisitorsPOJO record);
+    int insertSelective(VisitorsVO record);
 
-    VisitorsPOJO selectByPrimaryKey(Integer id);
+    VisitorsVO selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(VisitorsPOJO record);
+    int updateByPrimaryKeySelective(VisitorsVO record);
 
-    int updateByPrimaryKey(VisitorsPOJO record);
+    int updateByPrimaryKey(VisitorsVO record);
 }

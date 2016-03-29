@@ -1,6 +1,6 @@
 package com.lichking.pojo.web;
 
-public class OptionPOJO {
+public class OptionVO {
 
 	public String getO() {
 		return o;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lichking.itf.dao.IOrderInfoDAO" >
-  <resultMap id="BaseResultMap" type="com.lichking.pojo.OrderInfoPOJO" >
+  <resultMap id="BaseResultMap" type="com.lichking.pojo.web.OrderInfoVO" >
     <id column="orderNo" property="orderno" jdbcType="VARCHAR" />
     <result column="dealDate" property="dealdate" jdbcType="DATE" />
     <result column="dealTime" property="dealtime" jdbcType="TIME" />
@@ -22,7 +22,7 @@
     delete from OrderInfo
     where orderNo = #{orderno,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.lichking.pojo.OrderInfoPOJO" >
+  <insert id="insert" parameterType="com.lichking.pojo.web.OrderInfoPOJO" >
     insert into OrderInfo (orderNo, dealDate, dealTime, 
       orderDetails, customerId, status
       )
@@ -30,7 +30,7 @@
       #{orderdetails,jdbcType=VARCHAR}, #{customerid,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.lichking.pojo.OrderInfoPOJO" >
+  <insert id="insertSelective" parameterType="com.lichking.pojo.web.OrderInfoVO" >
     insert into OrderInfo
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="orderno != null" >
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.lichking.pojo.OrderInfoPOJO" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.lichking.pojo.web.OrderInfoVO" >
     update OrderInfo
     <set >
       <if test="dealdate != null" >
@@ -94,7 +94,7 @@
     </set>
     where orderNo = #{orderno,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.lichking.pojo.OrderInfoPOJO" >
+  <update id="updateByPrimaryKey" parameterType="com.lichking.pojo.web.OrderInfoVO" >
     update OrderInfo
     set dealDate = #{dealdate,jdbcType=DATE},
       dealTime = #{dealtime,jdbcType=TIME},

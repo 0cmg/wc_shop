@@ -1,17 +1,17 @@
 package com.lichking.itf.dao;
 
-import com.lichking.pojo.web.ExpressInfoPOJO;
+import com.lichking.pojo.web.ExpressInfoVO;
 
 public interface IExpressInfoDAO {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(ExpressInfoPOJO record);
+    int insert(ExpressInfoVO record);
 
-    int insertSelective(ExpressInfoPOJO record);
+    int insertSelective(ExpressInfoVO record);
 
-    ExpressInfoPOJO selectByPrimaryKey(Integer id);
+    ExpressInfoVO selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(ExpressInfoPOJO record);
+    int updateByPrimaryKeySelective(ExpressInfoVO record);
 
-    int updateByPrimaryKey(ExpressInfoPOJO record);
+    int updateByPrimaryKey(ExpressInfoVO record);
 }

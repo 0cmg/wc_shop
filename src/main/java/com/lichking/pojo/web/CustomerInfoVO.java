@@ -1,6 +1,6 @@
 package com.lichking.pojo.web;
 
-public class CustomerInfoPOJO {
+public class CustomerInfoVO {
     private Integer id;
 
     private String appid;

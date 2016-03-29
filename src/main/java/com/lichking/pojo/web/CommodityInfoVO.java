@@ -1,6 +1,6 @@
 package com.lichking.pojo.web;
 
-public class CommodityInfoPOJO {
+public class CommodityInfoVO {
     private Integer commodityid;
 
     private String name;

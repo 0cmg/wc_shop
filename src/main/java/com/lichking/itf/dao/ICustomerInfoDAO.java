@@ -1,17 +1,17 @@
 package com.lichking.itf.dao;
 
-import com.lichking.pojo.web.CustomerInfoPOJO;
+import com.lichking.pojo.web.CustomerInfoVO;
 
 public interface ICustomerInfoDAO {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(CustomerInfoPOJO record);
+    int insert(CustomerInfoVO record);
 
-    int insertSelective(CustomerInfoPOJO record);
+    int insertSelective(CustomerInfoVO record);
 
-    CustomerInfoPOJO selectByPrimaryKey(Integer id);
+    CustomerInfoVO selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(CustomerInfoPOJO record);
+    int updateByPrimaryKeySelective(CustomerInfoVO record);
 
-    int updateByPrimaryKey(CustomerInfoPOJO record);
+    int updateByPrimaryKey(CustomerInfoVO record);
 }

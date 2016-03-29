@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.alibaba.fastjson.JSONObject;
 import com.lichking.itf.service.ICommodityTypeService;
-import com.lichking.pojo.web.CommodityTypePOJO;
+import com.lichking.pojo.web.CommodityTypeVO;
 import com.lichking.util.json.ResponseUtil;
 
 
@@ -24,9 +24,9 @@ public class JsonTestController {
 	@RequestMapping("/getallctypes")
 	public String getAllCommodityTypes(HttpServletResponse res) throws Exception{
 		JSONObject jsonObject = new JSONObject();
-		List<CommodityTypePOJO> c_list = this.commodityTypeService.getAllTypes();
+		List<CommodityTypeVO> c_list = this.commodityTypeService.getAllTypes();
 		int count = 0;
-		for(CommodityTypePOJO c_type : c_list){
+		for(CommodityTypeVO c_type : c_list){
 			String type = c_type.getType();
 			jsonObject.put("type"+String.valueOf(count), type);
 			count++;

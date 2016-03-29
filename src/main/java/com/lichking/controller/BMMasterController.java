@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lichking.itf.service.IUserService;
-import com.lichking.pojo.web.ResultPOJO;
-import com.lichking.pojo.web.UserPOJO;
+import com.lichking.pojo.web.ResultVO;
+import com.lichking.pojo.web.UserVO;
 import com.lichking.util.session.UserJudge;
 
 /**
@@ -32,11 +32,11 @@ public class BMMasterController {
 	
 	@SuppressWarnings("rawtypes")
 	@RequestMapping("/check_psw")
-	public @ResponseBody ResultPOJO doLogin(@RequestBody UserPOJO userpojo,HttpServletRequest req){
+	public @ResponseBody ResultVO doLogin(@RequestBody UserVO userpojo,HttpServletRequest req){
 		log.info("请求路径：/back/check_psw");
-		UserPOJO user = this.userService.getUser(userpojo.getUsername());
+		UserVO user = this.userService.getUser(userpojo.getUsername());
 		String psw = user.getPassword();
-		ResultPOJO<UserPOJO> resultPOJO = new ResultPOJO<UserPOJO>();
+		ResultVO<UserVO> resultPOJO = new ResultVO<UserVO>();
 		if(psw.equals(userpojo.getPassword())){
 			log.info("检查正确");
 			req.getSession().setAttribute("currentUser", user.getUsername());
