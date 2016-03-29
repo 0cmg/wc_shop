@@ -33,7 +33,7 @@
 					<td colspan="2"  >请登录</td>
 				</tr>
 				<tr class="thickrow">
-					<td>用户名
+					<td>用户名</td>
 					<td><input id="username" type="text" name="username" size="16"></td>
 				</tr>
 				<tr class="thickrow">

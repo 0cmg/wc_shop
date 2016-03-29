@@ -49,7 +49,7 @@ public class WCMainController {
 		
 	}
 	
-	
+	//与微信服务器交互的入口
 	@RequestMapping(value="/WeChatPortal",method=RequestMethod.POST)
 	public void vWeChatPortal_p(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		logger.info(new Date());

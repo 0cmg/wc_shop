@@ -3,7 +3,11 @@ package com.lichking.pojo.wechat;
 import java.util.List;
 
 import com.lichking.pojo.wechat.co.NewsItem;
-
+/**
+ * 图文消息类型的数据结构  用来生成图文消息的xml格式
+ * @author LichKing
+ *
+ */
 public class NewsMessage {
 
 	public String getToUserName() {

@@ -1,5 +1,10 @@
 package com.lichking.pojo.wechat;
 
+/**
+ * 文本消息的数据结构
+ * @author LichKing
+ *
+ */
 public class TextMessage {
 	public String getToUserName() {
 		return ToUserName;

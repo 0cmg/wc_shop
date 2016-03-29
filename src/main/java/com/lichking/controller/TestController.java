@@ -16,6 +16,11 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.lichking.util.FileUtil;
 
+/**
+ * 这是测试controller
+ * @author LichKing
+ */
+
 @Controller
 @RequestMapping("/test")
 public class TestController {

@@ -22,14 +22,15 @@ import com.lichking.pojo.wechat.AccessToken;
 
 /**
  * 从微信服务器获取接口调用凭据ACESSTOKEN
+ * 目前只使用了doget方法  dopost保留
  * @author LichKing
  *
  */
 @SuppressWarnings("deprecation")
 public class WeChatUtil {
 
-	private static final String APPID= "wxaa10ce64fa2e26b2";
-	private static final String APPSECRET= "a7ff8e5998cd7563772bfcb404f5d6e3";
+	private static final String APPID= "wxc80287bf18597edf";
+	private static final String APPSECRET= "25237dcb22448672ca668ae0a7a3c061";
 	
 	private static final String ACCESS_TOKEN_URL = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET";
 	

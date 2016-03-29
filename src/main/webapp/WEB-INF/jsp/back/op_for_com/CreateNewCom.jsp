@@ -4,10 +4,12 @@
 <html>
 <head>
 <link href="../css/createnewcom.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../uploadify/backup/uploadify.css" />
+<link rel="stylesheet" type="text/css"
+	href="../uploadify/backup/uploadify.css" />
 </head>
 <body>
-	<script type="text/javascript" src="../uploadify/backup/jquery.uploadify.min.js"></script>
+	<script type="text/javascript"
+		src="../uploadify/backup/jquery.uploadify.min.js"></script>
 	<script type="text/javascript" src="../js/createnewcom.jquery.js"></script>
 
 

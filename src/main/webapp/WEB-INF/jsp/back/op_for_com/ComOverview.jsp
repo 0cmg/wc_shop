@@ -26,9 +26,9 @@
 				</div>
 				<hr />
 				<!-- 单个商品框架 -->
-				
+
 				<div class="com_show_area">
-				<!-- 
+					<!-- 
 					<div class="com_border">
 						<div class="image_border">照片</div>
 						<div class="msg_ps_border">
@@ -44,7 +44,7 @@
 					</div>
 					-->
 				</div>
- 				
+
 
 				<div class="com_edit_area"></div>
 			</div>

@@ -6,17 +6,17 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
+/**
+ *  文件工具类  
+ * @author LichKing
+ */
 public class FileUtil {
 
 	/**
-	 * 
 	 * 单个文件上传
-	 * 
-	 * @param is
-	 * 
-	 * @param fileName
-	 * 
-	 * @param filePath
+	 * @param is 输入流
+	 * @param fileName 文件名
+	 * @param filePath 文件路径 
 	 */
 	public static void upFile(InputStream is, String fileName, String filePath) {
 		

@@ -37,12 +37,13 @@
 		<!-- End Sidebar Show Hide Button -->
 
 		<!-- Start Searchbox -->
-    	<form class="searchform">
-      		<input type="text" class="searchbox" id="searchbox" placeholder="Search">
-      		<span class="searchbutton"><i class="fa fa-search"></i></span>
-    	</form>
-    	<!-- End Searchbox -->
-		
+		<form class="searchform">
+			<input type="text" class="searchbox" id="searchbox"
+				placeholder="Search"> <span class="searchbutton"><i
+				class="fa fa-search"></i></span>
+		</form>
+		<!-- End Searchbox -->
+
 		<!-- Start Top Menu -->
 		<ul class="topmenu">
 			<li><a href="..//">&nbsp;&nbsp;商城主页&nbsp;&nbsp;</a></li>
@@ -87,11 +88,16 @@
 			<li><a><span class="icon color7"><i
 						class="fa fa-flask"></i></span>商品操作<span class="caret"></span></a>
 				<ul>
-					<li><a data="comoverview" href="ComOverview" data-toggle="modal" data-target="#modal" >商品总览</a></li>
-					<li><a data="createtype" href="CreateNewType" data-toggle="modal" data-target="#modal" >新增类型</a></li>
-					<li><a data="createcom" href="CreateNewCom" data-toggle="modal" data-target="#modal">新增商品</a></li>
-					<li><a data="comonoff" href="ComOnAndOff" data-toggle="modal" data-target="#modal">上下架商品</a></li>
-					<li><a data="comim" href="ComInventoryManage" data-toggle="modal" data-target="#modal">货源管理</a></li>
+					<li><a data="comoverview" href="ComOverview"
+						data-toggle="modal" data-target="#modal">商品总览</a></li>
+					<li><a data="createtype" href="CreateNewType"
+						data-toggle="modal" data-target="#modal">新增类型</a></li>
+					<li><a data="createcom" href="CreateNewCom"
+						data-toggle="modal" data-target="#modal">新增商品</a></li>
+					<li><a data="comonoff" href="ComOnAndOff" data-toggle="modal"
+						data-target="#modal">上下架商品</a></li>
+					<li><a data="comim" href="ComInventoryManage"
+						data-toggle="modal" data-target="#modal">货源管理</a></li>
 				</ul></li>
 			<li><a><span class="icon color9"><i class="fa fa-th"></i></span>订单操作<span
 					class="caret"></span></a>
@@ -286,16 +292,17 @@
 
 	</div>
 	<!-- End Content -->
-	
+
 	<div class="modal fade" id="modal" tabindex="-1" role="dialog"
-		aria-labelledby="modal" aria-hidden="true" style="width:70%;margin:auto auto auto auto;padding-top:10px;">
+		aria-labelledby="modal" aria-hidden="true"
+		style="width:70%;margin:auto auto auto auto;padding-top:10px;">
 		<div class="modal-content"></div>
 	</div>
 
-	
+
 	<script type="text/javascript" src="../js/plugins.js"></script>
 
-	
+
 
 	<script type="text/javascript"
 		src="../js/bootstrap-select/bootstrap-select.js"></script>
@@ -322,10 +329,10 @@
 	<script type="text/javascript" src="../js/moment/moment.min.js"></script>
 
 	<script type="text/javascript" src="../js/chart_generate.js"></script>
-	
+
 	<script type="text/javascript" src="../js/manage.jquery.js"></script>
 	<script src="../ckeditor/ckeditor.js"></script>
-	
+
 
 </body>
 </html>

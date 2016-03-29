@@ -1,5 +1,10 @@
 package com.lichking.pojo.wechat.co;
 
+/**
+ * 用在NewsMessage中
+ * @author LichKing
+ *
+ */
 public class NewsItem {
 
 	public String getTitle() {

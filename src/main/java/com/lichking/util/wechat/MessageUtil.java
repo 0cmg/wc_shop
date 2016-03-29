@@ -20,7 +20,11 @@ import com.lichking.pojo.wechat.co.NewsItem;
 import com.thoughtworks.xstream.XStream;
 
 
-
+/**
+ * 用于和微信服务器传输的数据类型的转换生成操作操作
+ * @author LichKing
+ *
+ */
 public class MessageUtil {
 	//消息类型常量
 	public static final String MESSAGE_TEXT = "text";

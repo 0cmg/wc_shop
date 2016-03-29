@@ -1,5 +1,10 @@
 package com.lichking.pojo.web.co;
 
+/**
+ * 用在 ComIMVO 中
+ * @author LichKing
+ *
+ */
 public class SimpleComVO {
 
 	public Integer getCommodityid() {
