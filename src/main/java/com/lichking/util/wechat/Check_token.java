@@ -3,6 +3,11 @@ package com.lichking.util.wechat;
 import java.security.MessageDigest;
 import java.util.Arrays;
 
+/**
+ * 在第一次接入微信时  与微信服务器的验证
+ * @author LichKing
+ *
+ */
 public class Check_token {
 	private static final String token = "boblandry";
 	public static boolean checkSignature(String signature,String timestamp,String nonce){
