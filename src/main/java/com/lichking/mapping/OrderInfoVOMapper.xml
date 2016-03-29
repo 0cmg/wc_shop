@@ -22,7 +22,7 @@
     delete from OrderInfo
     where orderNo = #{orderno,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.lichking.pojo.web.OrderInfoPOJO" >
+  <insert id="insert" parameterType="com.lichking.pojo.web.OrderInfoVO" >
     insert into OrderInfo (orderNo, dealDate, dealTime, 
       orderDetails, customerId, status
       )
