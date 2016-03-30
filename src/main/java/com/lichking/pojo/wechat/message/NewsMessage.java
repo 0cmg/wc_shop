@@ -1,11 +1,15 @@
-package com.lichking.pojo.wechat;
+package com.lichking.pojo.wechat.message;
 
+import java.util.List;
+
+import com.lichking.pojo.wechat.co.NewsItem;
 /**
- * 文本消息的数据结构
+ * 图文消息类型的数据结构  用来生成图文消息的xml格式
  * @author LichKing
  *
  */
-public class TextMessage {
+public class NewsMessage {
+
 	public String getToUserName() {
 		return ToUserName;
 	}
@@ -30,24 +34,24 @@ public class TextMessage {
 	public void setMsgType(String msgType) {
 		MsgType = msgType;
 	}
-	public String getContent() {
-		return Content;
+	public int getArticleCount() {
+		return ArticleCount;
 	}
-	public void setContent(String content) {
-		Content = content;
+	public void setArticleCount(int articleCount) {
+		ArticleCount = articleCount;
 	}
-	public String getMsgId() {
-		return MsgId;
+	public List<NewsItem> getArticles() {
+		return Articles;
 	}
-	public void setMsgId(String msgId) {
-		MsgId = msgId;
+	public void setArticles(List<NewsItem> articles) {
+		Articles = articles;
 	}
 	private String ToUserName;
 	private String FromUserName;
 	private String CreateTime;
 	private String MsgType;
-	private String Content;
-	private String MsgId;
+	private int ArticleCount;
+	private List<NewsItem> Articles;
 	
 	
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import com.lichking.logicalprocessor.MenuProcessor;
 import com.lichking.util.FileUtil;
 
 /**
@@ -61,5 +62,10 @@ public class TestController {
 		return "test/testck";
 	}
 	
+	@RequestMapping("/createmenu")
+	public String vCreateMenu(){
+		MenuProcessor.doMenuProcess();
+		return "test/createMenu";
+	}
 	
 }

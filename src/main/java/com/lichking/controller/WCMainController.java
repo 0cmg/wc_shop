@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.lichking.logicalprocessor.MenuProcessor;
 import com.lichking.util.wechat.Check_token;
 import com.lichking.util.wechat.MessageUtil;
 
@@ -26,6 +27,7 @@ public class WCMainController {
 	//微信服务器配置验证token入口
 	@RequestMapping(value="/WeChatPortal",method=RequestMethod.GET)
 	public void vWeChatPortal_g(HttpServletRequest req, HttpServletResponse res){
+		
 		
 		String signature = req.getParameter("signature");
 		String timestamp = req.getParameter("timestamp");
@@ -53,6 +55,9 @@ public class WCMainController {
 	@RequestMapping(value="/WeChatPortal",method=RequestMethod.POST)
 	public void vWeChatPortal_p(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		logger.info(new Date());
+		
+		MenuProcessor.doMenuProcess();
+		
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
 		PrintWriter pw = resp.getWriter();
@@ -63,7 +68,7 @@ public class WCMainController {
 			String toUserName = map.get("ToUserName");
 			String msgType = map.get("MsgType");
 			String content = map.get("Content");
-			//logger.info(msgType);
+			logger.info("from:"+fromUserName+"   "+content);
 			String message = null;
 			if(MessageUtil.MESSAGE_TEXT.equals(msgType)){
 				String response_content = content;

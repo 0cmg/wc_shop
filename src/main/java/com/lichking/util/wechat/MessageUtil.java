@@ -14,9 +14,9 @@ import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import com.lichking.pojo.wechat.NewsMessage;
-import com.lichking.pojo.wechat.TextMessage;
 import com.lichking.pojo.wechat.co.NewsItem;
+import com.lichking.pojo.wechat.message.NewsMessage;
+import com.lichking.pojo.wechat.message.TextMessage;
 import com.thoughtworks.xstream.XStream;
 
 
