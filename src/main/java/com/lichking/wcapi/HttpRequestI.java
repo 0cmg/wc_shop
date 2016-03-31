@@ -6,6 +6,7 @@ import net.sf.json.JSONObject;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.ParseException;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -64,6 +65,26 @@ public class HttpRequestI {
 			e.printStackTrace();
 		}
 		httpclient.close();
+		return jsonObject;
+	}
+	
+	/**
+	 * POST请求
+	 * @param url
+	 * @param outStr
+	 * @return
+	 * @throws ParseException
+	 * @throws IOException
+	 */
+	@SuppressWarnings("resource")
+	public static JSONObject doPostStr2(String url,String outStr) throws ParseException, IOException{
+		DefaultHttpClient client = new DefaultHttpClient();
+		HttpPost httpost = new HttpPost(url);
+		JSONObject jsonObject = null;
+		httpost.setEntity(new StringEntity(outStr,"UTF-8"));
+		HttpResponse response = client.execute(httpost);
+		String result = EntityUtils.toString(response.getEntity(),"UTF-8");
+		jsonObject = JSONObject.fromObject(result);
 		return jsonObject;
 	}
 	

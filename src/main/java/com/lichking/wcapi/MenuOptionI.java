@@ -119,9 +119,11 @@ public class MenuOptionI {
 		int result = 0;
 		String url = CREATE_MENU_URL.replace("ACCESS_TOKEN", token);
 		String menustr = JSONObject.fromObject(menu).toString();
-		JSONObject jsonObject = HttpRequestI.doPostStr(url, menustr);
+		JSONObject jsonObject = HttpRequestI.doPostStr2(url, menustr);
 		if(jsonObject != null){
 			result = jsonObject.getInt("errcode");
+			String msg = jsonObject.getString("errmsg");
+			System.out.println(msg);
 		}
 		return result;
 	}

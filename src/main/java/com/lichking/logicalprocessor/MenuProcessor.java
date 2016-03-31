@@ -3,10 +3,8 @@ package com.lichking.logicalprocessor;
 import java.io.IOException;
 import java.util.Date;
 
-import javax.ejb.CreateException;
 
 import org.apache.http.ParseException;
-import org.apache.log4j.Logger;
 
 import net.sf.json.JSONObject;
 
@@ -27,24 +25,20 @@ import com.lichking.wcapi.MenuOptionI;
  */
 public class MenuProcessor {
 
-	Logger logger = Logger.getLogger(MenuProcessor.class);
 	
 	public static void doMenuProcess(){
 		try {
 			String token = AccessTokenI.getAccessToken().getToken();
 			JSONObject jsonObject = null;
-			try{
-				jsonObject = MenuOptionI.queryMenu(token);
-			}catch(NullPointerException e){
-				create(jsonObject,token);
-			}
+			jsonObject = MenuOptionI.queryMenu(token);
 			create(jsonObject,token);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
 	private static void create(JSONObject jsonObject,String token){
+		//System.out.println(jsonObject.get("menu").toString());
 		if(jsonObject == null || jsonObject.get("menu") == null){
 			System.out.println("--------");
 			Menu menu = new Menu();
@@ -78,7 +72,7 @@ public class MenuProcessor {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
+			System.out.println(errcode);
 			if(errcode == 0){
 				System.out.println(new Date()+"  创建菜单成功");
 			}else{
