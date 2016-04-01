@@ -1,4 +1,4 @@
-package com.lichking.wcapi;
+package com.lichking.util.wcapi;
 
 import java.io.BufferedReader;
 import java.io.File;

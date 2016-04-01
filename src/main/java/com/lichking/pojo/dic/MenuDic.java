@@ -10,5 +10,7 @@ public class MenuDic {
 	
 	public static final String EXPRESS_QUERY = "快递查询";
 	
+	public static final String ADDRESS_MANAGE = "地址管理";
+	
 	
 }

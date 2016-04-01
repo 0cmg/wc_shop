@@ -27,11 +27,13 @@ $(document).on("click","#com_edit",function(){
 	var com_id_type = $(this).parent().attr("id");
 	var com_id = com_id_type.substring(0,com_id_type.indexOf("_op"));
 	var url = "/wc_shop/back/EditCom?id="+com_id;
+	window.open(url);
+	/*
 	$.get(url,function(data){
 		//alert(data);
 		$(".com_show_area").css("display","none");
 		$(".com_edit_area").html(data);
-	});
+	});*/
 });
 
 $(document).on("click","#com_delete",function(){

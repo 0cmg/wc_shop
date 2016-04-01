@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Date;
 
 
+
 import org.apache.http.ParseException;
 
 import net.sf.json.JSONObject;
@@ -15,8 +16,8 @@ import com.lichking.pojo.wechat.Menu;
 import com.lichking.pojo.wechat.button.Button;
 import com.lichking.pojo.wechat.button.ClickButton;
 import com.lichking.pojo.wechat.button.ViewButton;
-import com.lichking.wcapi.AccessTokenI;
-import com.lichking.wcapi.MenuOptionI;
+import com.lichking.util.wcapi.AccessTokenI;
+import com.lichking.util.wcapi.MenuOptionI;
 
 /**
  * 菜单处理器
@@ -38,9 +39,9 @@ public class MenuProcessor {
 	}
 	
 	private static void create(JSONObject jsonObject,String token){
-		//System.out.println(jsonObject.get("menu").toString());
-		if(jsonObject == null || jsonObject.get("menu") == null){
-			System.out.println("--------");
+		System.out.println(jsonObject.get("menu").toString());
+		if(jsonObject == null || jsonObject.get("menu") == null ){
+			//System.out.println("--------");
 			Menu menu = new Menu();
 			
 			ViewButton button1 = new ViewButton();
@@ -58,9 +59,14 @@ public class MenuProcessor {
 			button22.setName(MenuDic.EXPRESS_QUERY);
 			button22.setKey(KeyDic.EXPRESS_QUERY_KEY);
 			
+			ViewButton button23 = new ViewButton();
+			button23.setType(MenuOptionI.VIEW);
+			button23.setName(MenuDic.ADDRESS_MANAGE);
+			button23.setUrl(UrlDic.ADDRESS_MANAGE_URL);
+			
 			Button button2 = new Button();
 			button2.setName(MenuDic.MENU_1);
-			button2.setSub_button(new Button[]{button21,button22});
+			button2.setSub_button(new Button[]{button21,button22,button23});
 			
 			menu.setButton(new Button[]{button1,button2});
 			
