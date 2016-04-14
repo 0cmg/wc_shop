@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.lichking.logicalprocessor.MenuProcessor;
+import com.lichking.util.DateFormatUtil;
 import com.lichking.util.FileUtil;
 
 /**
@@ -65,7 +66,14 @@ public class TestController {
 	@RequestMapping("/createmenu")
 	public String vCreateMenu(){
 		MenuProcessor.doMenuProcess();
-		return "test/createMenu";
+		return "test/test";
+	}
+	
+	@RequestMapping("/test")
+	public String vTest(){
+		String dt = DateFormatUtil.getDateTime();
+		System.out.println(dt);
+		return "test/test";
 	}
 	
 }

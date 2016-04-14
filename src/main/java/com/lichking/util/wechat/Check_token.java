@@ -26,7 +26,7 @@ public class Check_token {
 		
 	}
 	//SHA1加密
-	public static String getSha1(String str){
+	private static String getSha1(String str){
 		if(str == null || str.length() == 0){
 			return null;
 		}

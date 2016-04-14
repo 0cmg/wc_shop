@@ -27,6 +27,9 @@ import com.lichking.util.wcapi.MenuOptionI;
 public class MenuProcessor {
 
 	
+	/**
+	 * 查询已有菜单  如果为空 则创建菜单
+	 */
 	public static void doMenuProcess(){
 		try {
 			String token = AccessTokenI.getAccessToken().getToken();
@@ -38,8 +41,13 @@ public class MenuProcessor {
 		}
 	}
 	
+	/**
+	 * 组装Menu 并调用微信API创建菜单
+	 * @param jsonObject 已有菜单的JSON对象
+	 * @param token access_token 
+	 */
 	private static void create(JSONObject jsonObject,String token){
-		System.out.println(jsonObject.get("menu").toString());
+		//System.out.println(jsonObject.get("menu").toString());
 		if(jsonObject == null || jsonObject.get("menu") == null ){
 			//System.out.println("--------");
 			Menu menu = new Menu();
@@ -78,7 +86,7 @@ public class MenuProcessor {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			System.out.println(errcode);
+			//System.out.println(errcode);
 			if(errcode == 0){
 				System.out.println(new Date()+"  创建菜单成功");
 			}else{

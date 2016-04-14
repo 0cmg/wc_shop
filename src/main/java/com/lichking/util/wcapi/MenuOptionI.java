@@ -114,7 +114,14 @@ public class MenuOptionI {
 		return menu;
 	}
 	
-	
+	/**
+	 * 创建菜单  返回值是errcode
+	 * @param token  access_token
+	 * @param menu Menu类
+	 * @return  errcode
+	 * @throws ParseException
+	 * @throws IOException
+	 */
 	public static int createMenu(String token,Menu menu) throws ParseException, IOException{
 		int result = 0;
 		String url = CREATE_MENU_URL.replace("ACCESS_TOKEN", token);
@@ -122,12 +129,19 @@ public class MenuOptionI {
 		JSONObject jsonObject = HttpRequestI.doPostStr2(url, menustr);
 		if(jsonObject != null){
 			result = jsonObject.getInt("errcode");
-			String msg = jsonObject.getString("errmsg");
-			System.out.println(msg);
+			//String msg = jsonObject.getString("errmsg");
+			//System.out.println(msg);
 		}
 		return result;
 	}
 	
+	/**
+	 * 查询菜单
+	 * @param token access_token
+	 * @return JSONObject   
+	 * @throws ParseException
+	 * @throws IOException
+	 */
 	public static JSONObject queryMenu(String token) throws ParseException, IOException{
 		String url = QUERY_MENU_URL.replace("ACCESS_TOKEN", token);
 		JSONObject jsonObject = HttpRequestI.doGetStr(url);

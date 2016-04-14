@@ -1,0 +1,62 @@
+#search_input{
+	float:left;
+	margin-left:5%;
+	width:70%;
+	padding-left:0px;
+	padding-right:0px;
+}
+#search_button{
+	float:left;
+	margin-left:5%;
+	margin-right:auto;
+}
+#search_area{
+	width:100%;
+	overflow: hidden;
+}
+.com_img{
+	height:90%;
+	margin:auto 3px;
+}
+.desc{
+	margin-left:4%;
+	margin-right:4%;
+	widht:54%;
+	margin-top:5px;
+}
+.price{
+	margin-left:2%;
+	margin-right:2%;
+	widht:16%;
+	margin-top:20px;
+}
+.commodity_list{
+	width:100%;
+	float:left;
+}
+.commodity_photo{
+	float:left;
+	width:20%;
+	height:100%;
+	text-align:center;
+}
+.commodity_desc{
+	float:left;
+	width:60%;
+	height:100%;
+	font-size:10px;
+	line-height:10px;
+}
+.commodity_price{
+	float:left;
+	width:20%;
+	height:100%;
+}
+.commodity{
+	height:60px;
+	width:100%;
+}
+.commodity:hover{
+	background:#F0F8FF;
+}
+

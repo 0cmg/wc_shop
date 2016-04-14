@@ -13,4 +13,9 @@ public class HomeController {
 		return "front/home";
 	}
 	
+	@RequestMapping("/address")
+	public String getAddress(){
+		return "front/address";
+	}
+	
 }

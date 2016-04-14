@@ -3,7 +3,6 @@ package com.lichking.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,9 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.lichking.logicalprocessor.MenuProcessor;
+import com.lichking.logicalprocessor.MainProcessor;
 import com.lichking.util.wechat.Check_token;
-import com.lichking.util.wechat.MessageUtil;
 
 
 
@@ -56,29 +54,7 @@ public class WCMainController {
 	public void vWeChatPortal_p(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		logger.info(new Date());
 		
-		MenuProcessor.doMenuProcess();
+		MainProcessor.doMainProcess(req, resp);
 		
-		req.setCharacterEncoding("UTF-8");
-		resp.setCharacterEncoding("UTF-8");
-		PrintWriter pw = resp.getWriter();
-		try{
-			Map<String,String> map = MessageUtil.XmlToMap(req);
-			
-			String fromUserName = map.get("FromUserName");
-			String toUserName = map.get("ToUserName");
-			String msgType = map.get("MsgType");
-			String content = map.get("Content");
-			logger.info("from:"+fromUserName+"   "+content);
-			String message = null;
-			if(MessageUtil.MESSAGE_TEXT.equals(msgType)){
-				String response_content = content;
-				message = MessageUtil.initText(toUserName, fromUserName, response_content);
-			}
-			pw.print(message);
-		}catch(Exception e){
-			e.printStackTrace();
-		}finally{
-			pw.close();
-		}
 	}
 }
