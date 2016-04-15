@@ -9,6 +9,8 @@ import java.util.Date;
 
 import net.sf.json.JSONObject;
 
+import com.lichking.pojo.dic.AppDic;
+import com.lichking.pojo.dic.UrlDic;
 import com.lichking.pojo.wechat.AccessToken;
 
 /**
@@ -19,13 +21,6 @@ import com.lichking.pojo.wechat.AccessToken;
  */
 public class AccessTokenI {
 
-	protected static final String APPID= "wxc80287bf18597edf";
-	protected static final String APPSECRET= "25237dcb22448672ca668ae0a7a3c061";
-	
-	protected static final String ACCESS_TOKEN_URL = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET";
-	
-	
-	
 	/**
 	 * 获取access token
 	 * @return
@@ -39,7 +34,7 @@ public class AccessTokenI {
 		if(!file.exists()){
 			file.createNewFile();
 			
-			String url = ACCESS_TOKEN_URL.replace("APPID", APPID).replace("APPSECRET", APPSECRET);
+			String url = UrlDic.ACCESS_TOKEN_URL.replace("APPID", AppDic.APPID).replace("APPSECRET", AppDic.APPSECRET);
 			JSONObject jsonObject = HttpRequestI.doGetStr(url);
 			if(jsonObject!=null){
 				token.setToken(jsonObject.getString("access_token"));
@@ -61,7 +56,7 @@ public class AccessTokenI {
 			Date date = new Date();
 			long now = date.getTime();
 			if((now-before)/1000 > 7200){
-				String url = ACCESS_TOKEN_URL.replace("APPID", APPID).replace("APPSECRET", APPSECRET);
+				String url = UrlDic.ACCESS_TOKEN_URL.replace("APPID", AppDic.APPID).replace("APPSECRET", AppDic.APPSECRET);
 				JSONObject jsonObject = HttpRequestI.doGetStr(url);
 				if(jsonObject!=null){
 					token.setToken(jsonObject.getString("access_token"));

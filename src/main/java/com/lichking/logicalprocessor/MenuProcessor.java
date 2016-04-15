@@ -1,14 +1,22 @@
 package com.lichking.logicalprocessor;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.Date;
 
 
 
+
+
+
+
 import org.apache.http.ParseException;
+import org.apache.log4j.Logger;
 
 import net.sf.json.JSONObject;
 
+import com.lichking.pojo.dic.AppDic;
 import com.lichking.pojo.dic.KeyDic;
 import com.lichking.pojo.dic.MenuDic;
 import com.lichking.pojo.dic.UrlDic;
@@ -26,6 +34,10 @@ import com.lichking.util.wcapi.MenuOptionI;
  */
 public class MenuProcessor {
 
+	//调试是用来修改菜单创建的开关  true则强制创建新菜单
+	private static boolean flag = false;
+	
+	private static Logger logger = Logger.getLogger(MenuProcessor.class);
 	
 	/**
 	 * 查询已有菜单  如果为空 则创建菜单
@@ -48,14 +60,14 @@ public class MenuProcessor {
 	 */
 	private static void create(JSONObject jsonObject,String token){
 		//System.out.println(jsonObject.get("menu").toString());
-		if(jsonObject == null || jsonObject.get("menu") == null ){
+		if(jsonObject == null || jsonObject.get("menu") == null || flag){
 			//System.out.println("--------");
 			Menu menu = new Menu();
 			
 			ViewButton button1 = new ViewButton();
 			button1.setType(MenuOptionI.VIEW);
 			button1.setName(MenuDic.SHOP_INDEX_NAME);
-			button1.setUrl(UrlDic.SHOP_INDEX_URL);
+			button1.setUrl(generateIndexUrl(UrlDic.SHOP_INDEX_URL));
 			
 			ClickButton button21 = new ClickButton();
 			button21.setType(MenuOptionI.CLICK);
@@ -93,5 +105,18 @@ public class MenuProcessor {
 				System.out.println(new Date()+"  创建菜单失败");
 			}
 		}
+	}
+	
+	//生成经oauth2认证并跳转到商城首页的新url
+	private static String generateIndexUrl(String url){
+		String result = "";
+		try {
+			url = URLEncoder.encode(url, "utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		result = UrlDic.OAUTH2_URL.replace("APPID", AppDic.APPID).replace("REDIRECT_URI", url).replace("SCOPE", "snsapi_base").replace("STATE", "123");
+		logger.info(result);
+		return result;
 	}
 }

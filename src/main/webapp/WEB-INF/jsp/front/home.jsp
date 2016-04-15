@@ -73,6 +73,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="shop_photos"></div>
 		<div class="shop_info"></div>
 		<div class="commodity_list">
+		
+			<!-- 一个商品的div模版 -->
 			<div id="1" class="commodity">
 				<div class="commodity_photo">
 					<img id="11" class="com_img" src="../img/star.jpg"></img>
@@ -90,6 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<br style="clear:both;" /><!-- 为了让父div自适应子div的高度 弃用 强制设定父div高度了 -->
 			</div>
+			
 		</div>
 	</div>
 <%@ include file="../footer.html" %>
