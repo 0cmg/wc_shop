@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author LichKing
  *
  */
-public class UserJudge {
+public class BMAdminCheck {
 
 	/**
 	 * 判断session中存放的用户是否为管理员

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.lichking.itf.service.IUserService;
 import com.lichking.pojo.web.ResultVO;
 import com.lichking.pojo.web.UserVO;
-import com.lichking.util.session.UserJudge;
+import com.lichking.util.session.BMAdminCheck;
 
 /**
  * 后台管理系统的路径总控制以及登录控制
@@ -60,7 +60,7 @@ public class BMMasterController {
 	@RequestMapping("/manage")
 	public String Manage(HttpServletRequest req){
 		log.info("请求路径：/back/manage");
-		boolean islogin = UserJudge.isAdmin("currentUser", req);
+		boolean islogin = BMAdminCheck.isAdmin("currentUser", req);
 		if(!islogin){
 			log.info("用户为空，重定向至:/back/login");
 			return "redirect:login";

@@ -82,7 +82,7 @@ public class MenuProcessor {
 			ViewButton button23 = new ViewButton();
 			button23.setType(MenuOptionI.VIEW);
 			button23.setName(MenuDic.ADDRESS_MANAGE);
-			button23.setUrl(UrlDic.ADDRESS_MANAGE_URL);
+			button23.setUrl(generateIndexUrl(UrlDic.ADDRESS_MANAGE_URL));
 			
 			Button button2 = new Button();
 			button2.setName(MenuDic.MENU_1);

@@ -9,7 +9,7 @@ public class UrlDic {
 	//商城首页地址
 	public static final String SHOP_INDEX_URL = "http://bobtest.3w.net579.com/wc_shop/home/main";
 	
-	public static final String ADDRESS_MANAGE_URL = "http://www.baidu.com";
+	public static final String ADDRESS_MANAGE_URL = "http://bobtest.3w.net579.com/wc_shop/home/address";
 	
 	//oauth2 认证获取openid的入口地址 参阅 http://mp.weixin.qq.com/wiki/17/c0f37d5704f0b64713d5d2c37b468d75.html
 	public static final String OAUTH2_URL = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect";
