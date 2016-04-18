@@ -1,0 +1,31 @@
+#option_panel{
+	overflow:hidden;
+	text-align:center;
+	margin-bottom:5px;
+}
+#addphone{
+	float:left;
+	margin-left:7%;
+	margin-right:7%;
+}
+#editphone{
+	float:left;
+}
+#delphone{
+	float:left;
+	margin-left:7%;
+	margin-right:7%;
+}
+#addaddress{
+	float:left;
+	margin-left:7%;
+	margin-right:7%;
+}
+#editaddress{
+	float:left;
+}
+#deladdress{
+	float:left;
+	margin-left:7%;
+	margin-right:7%;
+}

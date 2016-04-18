@@ -22,6 +22,8 @@ public class HomeController {
 			return "front/home";
 		}else{
 			String code = req.getParameter("code");
+			if(code == null || code == "" || code.equals(""))
+				return  "error";
 			logger.info("code:"+code);
 			String openid = Oauth2OptionI.getOpenid(code);
 			if(openid.equals("") || openid == ""){
@@ -39,7 +41,7 @@ public class HomeController {
 	@RequestMapping("/address")
 	public String vAddress(HttpServletRequest req){
 		if(HomeSessionCheck.openidCheck(req)){
-			return "front/address";
+			return "front/customerinfo";
 		}else{
 			String code = req.getParameter("code");
 			logger.info("code:"+code);
@@ -50,14 +52,14 @@ public class HomeController {
 				//openid 用户的唯一标识符
 				req.getSession().setAttribute("openid", openid);
 				logger.info("获取到openid："+openid);
-				return "front/address";
+				return "front/customerinfo";
 			}
 		}
 	}
 	
-	@RequestMapping("/getaddress")
+	@RequestMapping("/addaddress")
 	public String vGetAddress(){
-		return "front/getaddress";
+		return "front/addaddress";
 	}
 	
 }

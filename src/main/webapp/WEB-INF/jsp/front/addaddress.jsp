@@ -8,9 +8,6 @@
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 	<link href="../css/footer.css" rel="stylesheet">
 	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://libs.baidu.com/jqueryui/1.8.22/jquery-ui.min.js"></script>
@@ -19,6 +16,7 @@
 	<link href="../css/weui.min.css" rel="stylesheet" media="screen">
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=FVSykwVIFk6ykQB8V4D0RLGX"></script>
 	<script type="text/javascript" src="/wc_shop/js/footer.js"></script>
+	<script type="text/javascript" src="../js/addaddress.jquery.js"></script>
 	<style type="text/css">
 	#allmap {width: 100%;height: 400px;overflow: hidden;margin:0;font-family:"微软雅黑";}
 	#addresslabel{width:70px;}
@@ -27,8 +25,7 @@
   </head>
   
   <body>
-    <div id="allmap"></div>
-    <div class="weui_cells weui_cells_form">
+  	<div class="weui_cells weui_cells_form">
 	    <div class="weui_cell">
 	        <div class="weui_cell_hd">
 	            <label class="weui_label" id="addresslabel">收货地址</label>
@@ -39,8 +36,9 @@
 	    </div>
 	</div>
 	<div class="button_sp_area">
-	<a href="javascript:;" class="weui_btn weui_btn_plain_primary" id="next">下一步</a>
+	<a href="javascript:;" class="weui_btn weui_btn_plain_primary" id="finish">完成</a>
 	</div>
+    <div id="allmap"></div>
 	<%@ include file="../footer.html" %>
   </body>
 </html>
