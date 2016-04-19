@@ -34,7 +34,7 @@
 		<div class="weui_tab_bd">
 			<div class="weui_cells_title">联系方式</div>
 			<div class="weui_cells weui_cells_radio" id="phone_list">
-			    <label class="weui_cell weui_check_label" for="p0">
+			   <!--  <label class="weui_cell weui_check_label" for="p0">
 			      <div class="weui_cell_bd weui_cell_primary">
 			        <p>手机号码1</p>
 			      </div>
@@ -51,7 +51,34 @@
 			        <input type="radio" value="p1" name="phone" class="weui_check" id="p1">
 			        <span class="weui_icon_checked"></span>
 			      </div>
-			    </label>
+			    </label>-->
+			</div>
+			
+		    <div class="weui_dialog_confirm" style="display:none;" id="phone_dialog">
+			    <div class="weui_mask"></div>
+			    <div class="weui_dialog">
+			        <div class="weui_dialog_hd">
+			          <strong class="weui_dialog_title" id="phone_dialog_title">弹窗标题</strong>
+			        </div>
+			        <div class="weui_dialog_bd">
+			        	<div class="weui_cell">
+					        <div class="weui_cell_hd">
+					            <label class="weui_label">号码</label>
+					        </div>
+					        <div class="weui_cell_bd weui_cell_primary">
+					            <input class="weui_input" id="phonenumber" type="tel" placeholder="请输入你的手机号码">
+					        </div>
+					    </div>
+					    <div id="hiddeninfo" style="display:none;">
+					    	<div id="status"></div>
+					    	<div id="index"></div>
+					    </div>
+			        </div>
+			        <div class="weui_dialog_ft">
+			            <a href="javascript:;" class="weui_btn_dialog default" id="phone_dialog_cancel">取消</a>
+			            <a href="javascript:;" class="weui_btn_dialog primary" id="phone_dialog_submit">确定</a>
+			        </div>
+			    </div>
 			</div>
 			<div id="option_panel">
 				<a href="javascript:;" id="addphone" class="weui_btn weui_btn_primary" style="width:24%;margin-top:5px;margin-bottom:5px;">新增</a>
@@ -71,6 +98,31 @@
 			      </div>
 			    </label>
 			   -->
+			</div>
+			<div class="weui_dialog_confirm" style="display:none;" id="address_dialog">
+			    <div class="weui_mask"></div>
+			    <div class="weui_dialog">
+			        <div class="weui_dialog_hd">
+			          <strong class="weui_dialog_title" id="address_dialog_title">修改收货地址</strong>
+			        </div>
+			        <div class="weui_dialog_bd">
+			        	<div class="weui_cell">
+					        <div class="weui_cell_hd">
+					            <label class="weui_label">地址</label>
+					        </div>
+					        <div class="weui_cell_bd weui_cell_primary">
+					            <input class="weui_input" id="address_content" type="text" placeholder="请输入你的收货地址">
+					        </div>
+					    </div>
+					    <div id="hiddeninfo" style="display:none;">
+					    	<div id="index_address"></div>
+					    </div>
+			        </div>
+			        <div class="weui_dialog_ft">
+			            <a href="javascript:;" class="weui_btn_dialog default" id="address_dialog_cancel">取消</a>
+			            <a href="javascript:;" class="weui_btn_dialog primary" id="address_dialog_submit">确定</a>
+			        </div>
+			    </div>
 			</div>
 			<div id="option_panel">
 			<a href="addaddress" id="addaddress" class="weui_btn weui_btn_primary" style="width:24%;margin-top:5px;margin-bottom:5px;">新增</a>

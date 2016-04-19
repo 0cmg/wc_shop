@@ -2,6 +2,12 @@ package com.lichking.pojo.web.co;
 
 import java.util.List;
 
+/**
+ * CustomerInfoVO 中的 address 的json
+ * @author LichKing
+ *
+ */
+
 public class AddressListVO {
 
 	private List<String> address_list;

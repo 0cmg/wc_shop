@@ -2,6 +2,12 @@ package com.lichking.pojo.web.co;
 
 import java.util.List;
 
+/**
+ * CustomerInfoVO 中 phoneno 的json
+ * @author LichKing
+ *
+ */
+
 public class PhoneListVO {
 
 	private List<String> phone_list;
