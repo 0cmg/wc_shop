@@ -27,12 +27,12 @@ import com.lichking.pojo.web.co.PhoneListVO;
 @Controller
 @RequestMapping("/front/data")
 @SuppressWarnings({ "rawtypes", "unchecked" })
-public class FrontDataController {
+public class CustomerInfoController {
 
 	@Resource
 	private ICustomerInfoService customerInfoService;
 	
-	private Logger logger = Logger.getLogger(FrontDataController.class);
+	private Logger logger = Logger.getLogger(CustomerInfoController.class);
 	
 	/**
 	 * 获取当前用户的信息  手机号码  收货地址

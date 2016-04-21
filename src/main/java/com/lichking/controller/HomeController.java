@@ -40,11 +40,14 @@ public class HomeController {
 	
 	@RequestMapping("/address")
 	public String vAddress(HttpServletRequest req){
+		logger.info("请求地址：/home/address");
 		if(HomeSessionCheck.openidCheck(req)){
 			return "front/customerinfo";
 		}else{
 			String code = req.getParameter("code");
 			logger.info("code:"+code);
+			if(code == "" || code.equals("") || code == null)
+				return "error";
 			String openid = Oauth2OptionI.getOpenid(code);
 			if(openid.equals("") || openid == ""){
 				return "error";

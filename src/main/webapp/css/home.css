@@ -29,6 +29,7 @@
 	margin-right:2%;
 	widht:16%;
 	margin-top:20px;
+	color:red;
 }
 .commodity_list{
 	width:100%;
@@ -59,4 +60,8 @@
 .commodity:hover{
 	background:#F0F8FF;
 }
+#hidden_data{
+	display:none;
+}
+
 

@@ -54,5 +54,6 @@
 <script type="text/javascript" src="http://libs.baidu.com/jqueryui/1.8.22/jquery-ui.min.js"></script>
 <link href="http://libs.baidu.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script type="text/javascript" src="http://libs.baidu.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<link href="/wc_shop/css/createnewcom.css" rel="stylesheet" >
+<link href="../css/createnewcom.css" rel="stylesheet" >
+<link href="../css/login.css" rel="stylesheet">
 </html>

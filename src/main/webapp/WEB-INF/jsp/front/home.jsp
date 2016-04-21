@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </button>
             </div>
             <div>
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" id="type_list">
                     <li class="active"><a href="#">全部</a></li>
                     <li><a href="#">测试</a></li>
                 </ul>
@@ -55,7 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div>
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">我的订单</a></li>
-                        <li><a href="adress">收货地址</a></li>
+                        <li><a href="address">收货地址</a></li>
                         <li><a href="#">交易记录</a></li>
                         <li><a href="#">快递查询</a></li>
                     </ul>
@@ -75,6 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="commodity_list">
 		
 			<!-- 一个商品的div模版 -->
+			<!--  
 			<div id="1" class="commodity">
 				<div class="commodity_photo">
 					<img id="11" class="com_img" src="../img/star.jpg"></img>
@@ -90,9 +91,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						20 ￥
 					</div>
 				</div>
-				<br style="clear:both;" /><!-- 为了让父div自适应子div的高度 弃用 强制设定父div高度了 -->
+				<br style="clear:both;" />
 			</div>
-			
+			-->
 		</div>
 	</div>
 <%@ include file="../footer.html" %>
@@ -102,4 +103,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="http://libs.baidu.com/jqueryui/1.8.22/jquery-ui.min.js"></script>
 <script type="text/javascript" src="http://libs.baidu.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap.offcanvas.js"></script>
+<script type="text/javascript" src="../js/home.jquery.js"></script>
 </html>

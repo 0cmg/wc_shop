@@ -146,7 +146,7 @@ public class BMDataContronller {
 	public @ResponseBody ResultVO updateCom(@RequestBody CommodityInfoVO com){
 		log.info("请求路径：/back/data/updateComByPKSelective");
 		int r = this.commodityInfoService.updateComByPKSelective(com);
-		System.out.println(r);
+		//System.out.println(r);
 		ResultVO result = new ResultVO();
 		if(r == 1){
 			result.setMsg("更新商品成功");
