@@ -1,0 +1,36 @@
+.buy{
+	background-color:#FA8072;
+	color:white;
+	margin-left:5%;
+	margin-right:5%;
+}
+.weui_tabbar_label{
+	height:36px;
+	font-size:20px;
+	text-align:center;
+	line-height:36px;
+}
+.shopcart{
+	margin-left:5%;
+	margin-right:5%;
+	background-color:#F0FFFF;
+}
+.weui_navbar{
+	height:30px;
+	line-height:8px;
+}
+.weui_navbar_item:after{
+	border-right:0px solid #ccc;
+}
+#price{
+	color:red;
+}
+#dap{
+	margin-left:10%;
+} 
+#sri{
+	margin-left:10%;
+}
+#detail{
+	text-align:center;
+}

@@ -32,3 +32,10 @@
 #nodata{
 	margin-left:20px;
 }
+.weui_navbar{
+	height:30px;
+	line-height:8px;
+}
+.weui_navbar_item:after{
+	border-right:0px solid #ccc;
+}

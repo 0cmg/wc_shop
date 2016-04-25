@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-
+<!DOCTYPE html>
 <html>
   <head>
     <title>收货地址管理</title>

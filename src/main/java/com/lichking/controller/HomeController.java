@@ -65,4 +65,9 @@ public class HomeController {
 		return "front/addaddress";
 	}
 	
+	@RequestMapping("/comdetail")
+	public String vcomDetail(){
+		return "front/comdetail";
+	}
+	
 }

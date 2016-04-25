@@ -4,6 +4,7 @@ $(function(){
 	loadBaseData();
 	addTypeListener();
 	bindSearch();
+	bindUrl();
 	
 });
 
@@ -74,6 +75,7 @@ function addTypeListener(){
 			}
 		}
 		$(".commodity_list").html(content);
+		$(".commodity").css("cursor","pointer");
 		imgWidthCorrect();
 		
 		$("#js-bootstrap-offcanvas").removeClass("in");
@@ -111,6 +113,7 @@ function getAllCommodity(){
 					content += "<br style='clear:both;'></div>";
 				}
 				$(".commodity_list").html(content);
+				$(".commodity").css("cursor","pointer");
 				imgWidthCorrect();
 			}else{
 				alert("加载商品出错，请刷新页面");
@@ -145,9 +148,17 @@ function bindSearch(){
 			}
 		}
 		$(".commodity_list").html(content);
+		$(".commodity").css("cursor","pointer");
 		imgWidthCorrect();
 	});
 	
+}
+
+function bindUrl(){
+	$(document).on("click",".commodity",function(){
+		var id = $(this).attr("id");
+		window.location.href = "/wc_shop/com/showdetail/"+id;
+	});
 }
 
 
