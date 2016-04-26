@@ -1,0 +1,59 @@
+.weui_navbar{
+	height:30px;
+	line-height:8px;
+}
+.weui_navbar_item:after{
+	border-right:0px solid #ccc;
+}
+.weui_tabbar{
+	height:50px;
+}
+.weui_tabbar_item{
+	height:100%;
+}
+.weui_tabbar_label{
+	height:90%;
+	width:70%;
+	padding-top:3px;
+	color:white;
+	background-color:red;
+	font-size:16px;
+	line-height:32px;
+}
+.yellow{
+	background-color:orange;
+}
+.check{
+	height:50px;
+	overflow:hidden;
+}
+#cominfo{
+	width:100%;
+	height:50px;
+	margin-top:4px;
+}
+#img{
+	float:left;
+	width:55px;
+}
+#nad{
+	float:left;
+	font-size:10px;
+	padding-top:10px;
+	overflow:hidden;
+	max-width:132px;
+}
+#pan{
+	float:right;
+	font-size:10px;
+	padding-top:10px;
+	width:70px;
+}
+#ip{
+	width:50px;
+	height:50px;
+	margin:0 auto 0;
+}
+#pn{
+	color:red;
+}

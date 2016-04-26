@@ -1,5 +1,7 @@
 package com.lichking.itf.dao;
 
+import java.util.List;
+
 import com.lichking.pojo.web.VisitorsVO;
 
 public interface IVisitorsDAO {
@@ -14,4 +16,6 @@ public interface IVisitorsDAO {
     int updateByPrimaryKeySelective(VisitorsVO record);
 
     int updateByPrimaryKey(VisitorsVO record);
+    
+    List<VisitorsVO> selectByWhere(VisitorsVO record);
 }

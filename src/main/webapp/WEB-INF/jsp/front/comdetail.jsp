@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title></title>
+<title>${name}</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -19,6 +19,7 @@
 <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://libs.baidu.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../js/comdetail.jquery.js"></script>
+<script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
 
 </head>
@@ -28,7 +29,7 @@
 	<div class="weui_navbar">
 		<div class="weui_navbar_item "><a href="/wc_shop/home/main">商城首页</a></div>
 		<div class="weui_navbar_item"></div>
-		<div class="weui_navbar_item">我的订单</div>
+		<div class="weui_navbar_item">购物车</div>
 	</div>
 	<div id="hidden_param" style="display:none;">${comid}</div>
     <div class="weui_tab_bd">
@@ -55,9 +56,16 @@
 		-->
 		</div>
 		<hr />
-		<div id="dap">
-			<div id="ds"></div>
-			<div id="price"></div>
+		<div id="dapac">
+			<div id="dap">
+				<div id="ds"></div>
+				<div id="price"></div>
+			</div>
+			<div id="count">
+				<input class="min" name="" type="button" value="-" />
+				<input class="com_count" name="comnum" type="text" value="1" style="width:25px;" />
+				<input class="add" name="" type="button" value="+" />
+			</div>
 		</div>
 		<hr />
 		<div id="sri">
@@ -67,7 +75,7 @@
 			</div>
 			<div id="si">
 				<span id="sr">销量：</span>
-				<span id="rn"></span>
+				<span id="sn"></span>
 			</div>
 		</div>
 		<hr />
@@ -78,10 +86,10 @@
     </div>
     <div class="weui_tabbar">
         <div  class="weui_tabbar_item">
-            <p class="weui_tabbar_label shopcart">加入购物车</p>
+            <p class="weui_tabbar_label shopcart weui_btn weui_btn_primary">加入购物车</p>
         </div>
         <div  class="weui_tabbar_item">
-            <p class="weui_tabbar_label buy">立即购买</p>
+            <p class="weui_tabbar_label buy weui_btn weui_btn_primary">立即购买</p>
         </div>
         
     </div>

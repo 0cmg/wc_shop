@@ -1,7 +1,9 @@
 $(function(){
     $('.weui_tab').tab();
+    $(document).css("cursor","pointer");
     getComData();
-    
+    bindShopcartCookie();
+    bindCount();
 });
 
 function getComData(){
@@ -85,3 +87,40 @@ function getComData(){
 		}
 	});
 }
+
+function bindShopcartCookie(){
+	$(".shopcart").on("click",function(){
+		var number = $(".com_count").val();
+		if(number < 1){
+			alert("请选择正确的数量！");
+			return;
+		}
+		var shopcart = $.cookie("shopcart");
+		if(shopcart == null || shopcart == ""){
+			shopcart = $("#hidden_param").text() + ":" + $(".com_count").val() + ";";
+		}else{
+			shopcart += $("#hidden_param").text() + ":" + $(".com_count").val() + ";";
+		}
+		$.cookie("shopcart",shopcart,{expires : 30,path : '/'});
+		alert("添加到购物车成功！");
+	});
+	
+}
+
+function bindCount(){
+	$(".add").on("click",function() {
+        // $(this).prev() 就是当前元素的前一个元素，即 text_box
+        $(this).prev().val(parseInt($(this).prev().val()) + 1);
+	});
+	  
+	$(".min").on("click",function() {
+        // $(this).next() 就是当前元素的下一个元素，即 text_box
+        $(this).next().val(parseInt($(this).next().val()) - 1);
+	});
+}
+
+
+
+
+
+

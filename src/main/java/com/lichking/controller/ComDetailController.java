@@ -29,6 +29,9 @@ public class ComDetailController {
 		
 		logger.info("请求路径：/com/showdetail/"+comid);
 		model.addAttribute("comid", comid);
+		CommodityInfoVO civo = this.commodityInfoService.selectByPK(comid);
+		String name = civo.getName();
+		model.addAttribute("name", name);
 		return "front/comdetail";
 		
 	}

@@ -15,6 +15,21 @@
     from VisitorsNumber
     where Id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByWhere" resultMap="BaseResultMap" parameterType="com.lichking.pojo.web.VisitorsVO" >
+  	select
+  	<include refid="Base_Column_List" />
+    from VisitorsNumber
+    where 1=1 
+    <if test="id != null" >
+     and Id = #{id,jdbcType=INTEGER}
+    </if>
+    <if test="date != null" >
+      and date = #{date,jdbcType=DATE}
+    </if>
+    <if test="number != null" >
+      and number = #{number,jdbcType=INTEGER}
+    </if>
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from VisitorsNumber
     where Id = #{id,jdbcType=INTEGER}

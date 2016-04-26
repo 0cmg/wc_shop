@@ -26,11 +26,24 @@
 	color:red;
 }
 #dap{
-	margin-left:10%;
+	padding-left:10%;
 } 
 #sri{
 	margin-left:10%;
 }
 #detail{
 	text-align:center;
+}
+#dapac{
+	overflow:hidden;
+	width:100%;
+}
+#dap{
+	float:left;
+	width:65%;
+}
+#count{
+	float:right;
+	width:35%;
+	padding-top:30px;
 }
