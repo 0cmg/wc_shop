@@ -7,6 +7,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +28,7 @@ import com.lichking.util.FileUtil;
 @RequestMapping("/test")
 public class TestController {
 
+	Logger log = Logger.getLogger(TestController.class);
 	
 	@RequestMapping(value = "testupload", method = RequestMethod.POST, produces = "text/html;charset=utf-8")
 	@ResponseBody
@@ -65,6 +67,7 @@ public class TestController {
 	
 	@RequestMapping("/createmenu")
 	public String vCreateMenu(){
+		log.info("createmenu");
 		MenuProcessor.doMenuProcess();
 		return "test/test";
 	}

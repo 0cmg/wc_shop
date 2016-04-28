@@ -5,13 +5,13 @@ import java.util.Date;
 public class OrderInfoVO {
     private String orderno;
 
-    private Date dealdate;
-
     private Date dealtime;
 
     private String orderdetails;
 
     private String customerid;
+
+    private Double value;
 
     private Short status;
 
@@ -21,14 +21,6 @@ public class OrderInfoVO {
 
     public void setOrderno(String orderno) {
         this.orderno = orderno == null ? null : orderno.trim();
-    }
-
-    public Date getDealdate() {
-        return dealdate;
-    }
-
-    public void setDealdate(Date dealdate) {
-        this.dealdate = dealdate;
     }
 
     public Date getDealtime() {
@@ -53,6 +45,14 @@ public class OrderInfoVO {
 
     public void setCustomerid(String customerid) {
         this.customerid = customerid == null ? null : customerid.trim();
+    }
+
+    public Double getValue() {
+        return value;
+    }
+
+    public void setValue(Double value) {
+        this.value = value;
     }
 
     public Short getStatus() {

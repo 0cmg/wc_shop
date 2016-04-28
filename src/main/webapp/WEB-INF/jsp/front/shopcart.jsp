@@ -12,6 +12,7 @@
 	<link href="../css/weui.min.css" rel="stylesheet" media="screen">
 	<link href="http://libs.baidu.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="../css/shopcart.css" rel="stylesheet" media="screen">
+	<link href="../css/frame.css" rel="stylesheet" media="screen">
 	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://libs.baidu.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -70,10 +71,10 @@
 	</div>
 	<div class="weui_tabbar">
         <div  class="weui_tabbar_item">
-            <p class="weui_tabbar_label weui_btn weui_btn_primary yellow" id="delete">删除</p>
+            <p class="weui_tabbar_label weui_btn weui_btn_warn yellow" id="delete">删除</p>
         </div>
         <div  class="weui_tabbar_item">
-            <p class="weui_tabbar_label weui_btn weui_btn_primary" id="buy">立即付款</p>
+            <p class="weui_tabbar_label weui_btn weui_btn_warn" id="buy">立即付款</p>
         </div>
     </div>
 	</div>

@@ -1,25 +1,3 @@
-.weui_navbar{
-	height:30px;
-	line-height:8px;
-}
-.weui_navbar_item:after{
-	border-right:0px solid #ccc;
-}
-.weui_tabbar{
-	height:50px;
-}
-.weui_tabbar_item{
-	height:100%;
-}
-.weui_tabbar_label{
-	height:90%;
-	width:70%;
-	padding-top:3px;
-	color:white;
-	background-color:red;
-	font-size:16px;
-	line-height:32px;
-}
 .yellow{
 	background-color:orange;
 }

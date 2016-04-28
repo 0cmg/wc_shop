@@ -55,7 +55,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div>
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">我的订单</a></li>
-                        <li><a href="address">收货地址</a></li>
+                        <li><a href="address">个人信息</a></li>
                         <li><a href="shopcart">购物车</a></li>
                         <li><a href="#">快递查询</a></li>
                     </ul>

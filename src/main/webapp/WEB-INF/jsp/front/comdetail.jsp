@@ -29,7 +29,7 @@
 	<div class="weui_navbar">
 		<div class="weui_navbar_item "><a href="/wc_shop/home/main">商城首页</a></div>
 		<div class="weui_navbar_item"></div>
-		<div class="weui_navbar_item">购物车</div>
+		<div class="weui_navbar_item"><a href="/wc_shop/home/shopcart">购物车</a></div>
 	</div>
 	<div id="hidden_param" style="display:none;">${comid}</div>
     <div class="weui_tab_bd">

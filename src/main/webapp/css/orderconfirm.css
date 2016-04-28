@@ -1,0 +1,44 @@
+.cover{
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin-right: 10px;
+}
+.title{
+  font-weight: 400;
+  margin-right: 15px;
+  font-size: 12px;
+}
+.summary{
+  font-size: 10px;
+  margin-right: 15px;
+  color: #888888;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.red{
+	color:red;
+}
+.pan{
+	font-size:10px;
+}
+#tp{
+	float:right;
+	margin-right:10%;
+	margin-top:5px;
+	margin-bottom:5px;
+	overflow:hidden;
+}
+#tpc{
+	float:left;
+}
+#total_price{
+	float:right;
+}
+#nodata{
+	margin-left:20px;
+}

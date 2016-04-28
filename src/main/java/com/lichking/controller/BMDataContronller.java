@@ -189,6 +189,7 @@ public class BMDataContronller {
 			Byte b = 1;
 			new_com.setIsonline(b);
 			new_com.setCommodityid(comid_need);
+			new_com.setPrice(com.getPrice());
 			int r = this.commodityInfoService.updateComByPKSelective(new_com);
 			if (r ==1){
 				log.info("操作成功");
@@ -205,6 +206,7 @@ public class BMDataContronller {
 			Byte b = 0;
 			new_com.setIsonline(b);
 			new_com.setCommodityid(comid_need);
+			new_com.setPrice(com.getPrice());
 			int r = this.commodityInfoService.updateComByPKSelective(new_com);
 			if (r ==1){
 				log.info("操作成功");

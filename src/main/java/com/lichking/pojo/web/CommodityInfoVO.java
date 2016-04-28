@@ -57,8 +57,8 @@ public class CommodityInfoVO {
         return price;
     }
 
-    public void setPrice(String price) {
-        this.price = Double.valueOf(price);
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public String getDescdetails() {

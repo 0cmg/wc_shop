@@ -11,4 +11,9 @@ public class HomeSessionCheck {
 		return true;
 	}
 	
+	public static String getOpenid(HttpServletRequest req){
+		String openid  = (String)req.getSession().getAttribute("openid");
+		return openid;
+	}
+	
 }

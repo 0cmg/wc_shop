@@ -2,6 +2,7 @@ $(function(){
 	
 	loadShopcart();
 	bindDel();
+	bindBuy();
 	
 });
 
@@ -77,6 +78,10 @@ function bindDel(){
 		$("input[name='checkbox']:checked").each(function(){
 			cb_value.push($(this).attr("id")-1)
 		});
+		if(cb_value.length == 0){
+			alert("请选择商品");
+			return;
+		}
 		//alert(cb_value);
 		var cookie = $.cookie("shopcart")
 		var sc_list = cookie.split(";");
@@ -92,5 +97,37 @@ function bindDel(){
 	})
 }
 
+function bindBuy(){
+	$("#buy").on("click",function(){
+		var cb_value = [];
+		var cb_index = "";
+		$("input[name='checkbox']:checked").each(function(){
+			cb_value.push($(this).attr("id")-1)
+			cb_index += $(this).attr("id")-1;
+			cb_index += ";";
+		});
+		if(cb_value.length == 0){
+			alert("请选择商品");
+			return;
+		}
+		var cookie = $.cookie("shopcart")
+		var sc_list = cookie.split(";");
+		var info = "";
+		for(var i=0;i<cb_value.length;i++){
+			info += sc_list[i] + ";";
+		}
+		/*
+		for(var i=0;i<cb_value.length;i++){
+			sc_list.splice(cb_value[i]-i,1);
+		}
+		var newcookie = "";
+		for(var i=0;i<sc_list.length-1;i++){
+			newcookie += sc_list[i] + ";";
+		}
+		$.cookie("shopcart",newcookie,{expires : 30,path : '/'});
+		*/
+		window.location.href = "orderconfirm?info=" + info + "&cb_index=" + cb_index;
+	});
+}
 
 
