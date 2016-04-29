@@ -12,7 +12,8 @@
 <link href="../css/root.css" rel="stylesheet">
 <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/manage.jquery.js"></script>
+
+
 </head>
 
 <body>
@@ -61,9 +62,9 @@
 				<ul class="dropdown-menu dropdown-menu-list">
 					<li><a data="createcom" href="CreateNewCom"
 						data-toggle="modal" data-target="#modal"><i class="fa falist fa-paper-plane-o"></i>新增商品</a></li>
-					<li><a data="createtype" href="CreateNewType"
+					<li><a id="createtype" data="createtype" href="CreateNewType"
 						data-toggle="modal" data-target="#modal"><i class="fa falist fa-font"></i>新增类型</a></li>
-					<li><a data="finishorder" href="finishorder" 
+					<li><a data="finishorder" href="finishorder"
 						data-toggle="modal" data-target="#modal"><i class="fa falist fa-file-image-o"></i>完成订单</a></li>
 				</ul></li>
 
@@ -94,7 +95,7 @@
 				<ul>
 					<li><a data="comoverview" href="ComOverview"
 						data-toggle="modal" data-target="#modal">商品总览</a></li>
-					<li><a data="createtype" href="CreateNewType"
+					<li><a id="createtype" data="createtype" href="CreateNewType"
 						data-toggle="modal" data-target="#modal">新增类型</a></li>
 					<li><a data="createcom" href="CreateNewCom"
 						data-toggle="modal" data-target="#modal">新增商品</a></li>
@@ -106,9 +107,12 @@
 			<li><a><span class="icon color9"><i class="fa fa-th"></i></span>订单操作<span
 					class="caret"></span></a>
 				<ul>
-					<li><a data="finishorder" href="finishorder" data-toggle="modal" data-target="#modal">完成订单</a></li>
-					<li><a data="modifyorder" href="modifyorder" data-toggle="modal" data-target="#modal">修改订单</a></li>
-					<li><a data="deleteorder" href="deleteorder" data-toggle="modal" data-target="#modal">取消订单</a></li>
+					<li><a data="finishorder" href="finishorder"
+						data-toggle="modal" data-target="#modal">完成订单</a></li>
+					<li><a data="modifyorder" href="modifyorder"
+						data-toggle="modal" data-target="#modal">修改订单</a></li>
+					<li><a data="deleteorder" href="deleteorder"
+						data-toggle="modal" data-target="#modal">取消订单</a></li>
 				</ul></li>
 
 
@@ -221,16 +225,16 @@
 				<div class="col-md-12 col-lg-5">
 					<div class="panel panel-widget" style="height:450px;">
 						<div class="panel-title">
-							未处理订单 <span class="label label-danger" id="uton">--</span>
+							未处理订单 <span class="label label-danger">--</span>
 							<ul class="panel-tools">
-								<li id="order_refresh"><a class="icon" ><i class="fa fa-refresh"></i></a></li>
+								<li><a class="icon"><i class="fa fa-refresh"></i></a></li>
 								<li><a class="icon closed-tool"><i class="fa fa-times"></i></a></li>
 							</ul>
 						</div>
 						<div class="panel-body table-responsive">
 
 							<table class="table table-dic table-hover ">
-								<tbody id="order_content">
+								<tbody>
 									<tr>
 										<td><i class="fa fa-shopping-cart"></i>---</td>
 										<td>---</td>
@@ -333,8 +337,9 @@
 
 	<script type="text/javascript" src="../js/chart_generate.js"></script>
 
+	<script type="text/javascript" src="../js/manage.jquery.js"></script>
 	<script src="../ckeditor/ckeditor.js"></script>
-
+	<script src="../js/luo.jquery.js"></script>
 
 </body>
 </html>
