@@ -24,6 +24,7 @@
   </head>
   
   <body>
-    <h3>订单确认成功</h3>
+    <p>订单确认成功</p>
+    <div>订单号：${on}</div>
   </body>
 </html>

@@ -74,7 +74,7 @@
             <p class="weui_tabbar_label weui_btn weui_btn_warn yellow" id="delete">删除</p>
         </div>
         <div  class="weui_tabbar_item">
-            <p class="weui_tabbar_label weui_btn weui_btn_warn" id="buy">立即付款</p>
+            <p class="weui_tabbar_label weui_btn weui_btn_warn" id="buy">提交订单</p>
         </div>
     </div>
 	</div>

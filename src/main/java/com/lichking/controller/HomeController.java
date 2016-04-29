@@ -169,11 +169,13 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/pay",method=RequestMethod.GET)
-	public String vpay(HttpServletRequest req){
+	public String vpay(HttpServletRequest req,Model model){
 		String uuid = req.getParameter("on");
 		OrderInfoVO oivo = this.orderInfoService.selectByPK(uuid);
-		if(oivo != null)
+		if(oivo != null){
+			model.addAttribute("on", uuid);
 			return "front/pay";
+		}
 		return "error";
 	}
 	

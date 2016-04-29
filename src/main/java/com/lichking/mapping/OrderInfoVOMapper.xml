@@ -6,11 +6,12 @@
     <result column="dealTime" property="dealtime" jdbcType="TIMESTAMP" />
     <result column="orderDetails" property="orderdetails" jdbcType="VARCHAR" />
     <result column="customerId" property="customerid" jdbcType="VARCHAR" />
+    <result column="customerName" property="customername" jdbcType="VARCHAR" />
     <result column="value" property="value" jdbcType="DOUBLE" />
     <result column="status" property="status" jdbcType="SMALLINT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    orderNo, dealTime, orderDetails, customerId, value, status
+    orderNo, dealTime, orderDetails, customerId, customerName, value, status
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
@@ -18,17 +19,44 @@
     from OrderInfo
     where orderNo = #{orderno,jdbcType=VARCHAR}
   </select>
+  <select id="selectByWhere" resultMap="BaseResultMap" parameterType="com.lichking.pojo.web.OrderInfoVO">
+	select
+  	<include refid="Base_Column_List" />
+    from OrderInfo
+    where 1=1
+    <if test="orderno != null" >
+      and orderNo = #{orderno,jdbcType=VARCHAR}
+    </if>
+    <if test="dealtime != null" >
+      and dealTime = #{dealtime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="orderdetails != null" >
+      and orderDetails = #{orderdetails,jdbcType=VARCHAR}
+    </if>
+    <if test="customerid != null" >
+      and customerId = #{customerid,jdbcType=VARCHAR}
+    </if>
+    <if test="customername != null" >
+      and customerName = #{customername,jdbcType=VARCHAR}
+    </if>
+    <if test="value != null" >
+      and value = #{value,jdbcType=DOUBLE}
+    </if>
+    <if test="status != null" >
+      and status = #{status,jdbcType=SMALLINT}
+    </if>
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from OrderInfo
     where orderNo = #{orderno,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.lichking.pojo.web.OrderInfoVO" >
     insert into OrderInfo (orderNo, dealTime, orderDetails, 
-      customerId, value, status
-      )
+      customerId, customerName, value, 
+      status)
     values (#{orderno,jdbcType=VARCHAR}, #{dealtime,jdbcType=TIMESTAMP}, #{orderdetails,jdbcType=VARCHAR}, 
-      #{customerid,jdbcType=VARCHAR}, #{value,jdbcType=DOUBLE}, #{status,jdbcType=SMALLINT}
-      )
+      #{customerid,jdbcType=VARCHAR}, #{customername,jdbcType=VARCHAR}, #{value,jdbcType=DOUBLE}, 
+      #{status,jdbcType=SMALLINT})
   </insert>
   <insert id="insertSelective" parameterType="com.lichking.pojo.web.OrderInfoVO" >
     insert into OrderInfo
@@ -44,6 +72,9 @@
       </if>
       <if test="customerid != null" >
         customerId,
+      </if>
+      <if test="customername != null" >
+        customerName,
       </if>
       <if test="value != null" >
         value,
@@ -65,6 +96,9 @@
       <if test="customerid != null" >
         #{customerid,jdbcType=VARCHAR},
       </if>
+      <if test="customername != null" >
+        #{customername,jdbcType=VARCHAR},
+      </if>
       <if test="value != null" >
         #{value,jdbcType=DOUBLE},
       </if>
@@ -85,6 +119,9 @@
       <if test="customerid != null" >
         customerId = #{customerid,jdbcType=VARCHAR},
       </if>
+      <if test="customername != null" >
+        customerName = #{customername,jdbcType=VARCHAR},
+      </if>
       <if test="value != null" >
         value = #{value,jdbcType=DOUBLE},
       </if>
@@ -99,6 +136,7 @@
     set dealTime = #{dealtime,jdbcType=TIMESTAMP},
       orderDetails = #{orderdetails,jdbcType=VARCHAR},
       customerId = #{customerid,jdbcType=VARCHAR},
+      customerName = #{customername,jdbcType=VARCHAR},
       value = #{value,jdbcType=DOUBLE},
       status = #{status,jdbcType=SMALLINT}
     where orderNo = #{orderno,jdbcType=VARCHAR}

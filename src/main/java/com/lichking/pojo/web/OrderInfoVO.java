@@ -11,6 +11,8 @@ public class OrderInfoVO {
 
     private String customerid;
 
+    private String customername;
+
     private Double value;
 
     private Short status;
@@ -45,6 +47,14 @@ public class OrderInfoVO {
 
     public void setCustomerid(String customerid) {
         this.customerid = customerid == null ? null : customerid.trim();
+    }
+
+    public String getCustomername() {
+        return customername;
+    }
+
+    public void setCustomername(String customername) {
+        this.customername = customername == null ? null : customername.trim();
     }
 
     public Double getValue() {

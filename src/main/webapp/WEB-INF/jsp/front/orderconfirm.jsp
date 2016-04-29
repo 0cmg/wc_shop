@@ -66,11 +66,24 @@
 		<div class="weui_cells_title">请选择收货地址</div>
 		<div class="weui_cells weui_cells_radio" id="address_list">
 		</div>
-	    
+		
+		<div class="weui_cells_title">请输入收货人姓名</div>
+		<div class="weui_cells weui_cells_form">
+		    <div class="weui_cell">
+		        <div class="weui_cell_hd">
+		            <label class="weui_label">姓名</label>
+		        </div>
+		        <div class="weui_cell_bd weui_cell_primary">
+		            <input id="cname" class="weui_input" type="text"  placeholder="请输入姓名">
+		        </div>
+		    </div>
+		</div>
+		
+
 	</div>
 	<div class="weui_tabbar">
         <div  class="weui_tabbar_item">
-            <p class="weui_tabbar_label weui_btn weui_btn_warn" id="buy">立即付款</p>
+            <p class="weui_tabbar_label weui_btn weui_btn_warn" id="buy">确认订单</p>
         </div>
     </div>
 	</div>

@@ -1,5 +1,7 @@
 package com.lichking.impl.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -23,6 +25,21 @@ public class OrderInfoServiceImpl implements IOrderInfoService {
 	@Override
 	public OrderInfoVO selectByPK(String pk) {
 		return this.orderInfoDAO.selectByPrimaryKey(pk);
+	}
+
+	@Override
+	public List<OrderInfoVO> selectByWhere(OrderInfoVO record) {
+		return this.orderInfoDAO.selectByWhere(record);
+	}
+
+	@Override
+	public int updateByPKSelective(OrderInfoVO record) {
+		return this.orderInfoDAO.updateByPrimaryKeySelective(record);
+	}
+
+	@Override
+	public int deleteByPK(String pk) {
+		return this.orderInfoDAO.deleteByPrimaryKey(pk);
 	}
 
 }

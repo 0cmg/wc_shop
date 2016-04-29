@@ -107,4 +107,22 @@ public class BMMasterController {
 		log.info("请求路径：/back/ComInventoryManage");
 		return "back/op_for_com/ComInventoryManage";
 	}
+	
+	@RequestMapping("/modifyorder")
+	public String vmodifyorder(){
+		log.info("请求路径：/back/modifyorder");
+		return "back/op_for_order/modifyorder";
+	}
+	
+	@RequestMapping("/deleteorder")
+	public String vdeleteorder(){
+		log.info("请求路径：/back/deleteorder");
+		return "back/op_for_order/deleteorder";
+	}
+	
+	@RequestMapping("/finishorder")
+	public String vfinisheorder(){
+		log.info("请求路径：/back/finishorder");
+		return "back/op_for_order/finishorder";
+	}
 }

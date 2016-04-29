@@ -27,14 +27,14 @@ import com.lichking.pojo.web.co.SimpleComVO;
  */
 @Controller
 @RequestMapping("/back/data")
-public class BMDataContronller {
+public class BMComDataContronller {
 	
 	@Resource
 	private ICommodityTypeService commodityTypeService;
 	@Resource
 	private ICommodityInfoService commodityInfoService;
 	
-	private Logger log = Logger.getLogger(BMDataContronller.class);
+	private Logger log = Logger.getLogger(BMComDataContronller.class);
 	
 	/**
 	 * 查询所有商品类型

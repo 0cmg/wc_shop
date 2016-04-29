@@ -175,6 +175,14 @@ function bindSubmit(){
 			alert("请选择收货地址");
 			return;
 		}
+		
+		var cname = $("#cname").val();
+		if(cname == "" || cname == undefined || cname == null || cname.length == 0 ){
+			alert("请输入姓名");
+			return;
+		}
+		
+		
 		phone_index = phone_index.substring(1,phone_index.length);
 		address_index = address_index.substring(1,address_index.length);
 		var od = {
@@ -184,7 +192,8 @@ function bindSubmit(){
 		};
 		var oi = {
 			orderdetails:JSON.stringify(od),
-			value:total_price
+			value:total_price,
+			customername:cname
 		};
 		$.ajax({
 			url : "/wc_shop/home/submitOrder",
