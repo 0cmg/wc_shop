@@ -161,26 +161,26 @@
 					<li class="arrow"></li>
 					<li class="col-xs-6 col-lg-2"><span class="title"><i
 							class="fa fa-dot-circle-o"></i> 今日营业额</span>
-						<h3>---</h3> <span class="diff"><b class="color-down"><i
-								class="fa fa-caret-down"></i> --%</b> 相比昨天</span></li>
+						<h3 id="today_turnover">---</h3> <span class="diff"><b id="b_tt_c" class="color-down"><i
+								class="fa fa-caret-down" id="i_tt_c"></i> <span id="tt_c">--</span>%</b> 相比昨天</span></li>
 					<li class="col-xs-6 col-lg-2"><span class="title"><i
 							class="fa fa-dot-circle-o"></i> 本周营业额</span>
-						<h3>---</h3> <span class="diff"><b class="color-up"><i
-								class="fa fa-caret-up"></i> --%</b> 相比上周</span></li>
+						<h3 id="thisweek_turnover">---</h3> <span class="diff"><b id="b_twt_c" class="color-up"><i
+								class="fa fa-caret-up" id="i_twt_c"></i> <span id="twt_c">--</span>%</b> 相比上周</span></li>
 					<li class="col-xs-6 col-lg-2"><span class="title"><i
 							class="fa fa-shopping-cart"></i> 今日订单数</span>
-						<h3 class="color-up">---</h3> <span class="diff"><b
-							class="color-up"><i class="fa fa-caret-up"></i> --%</b> 相比昨天</span></li>
+						<h3 id="today_on">---</h3> <span class="diff"><b
+							class="color-up" id="b_to_c"><i class="fa fa-caret-up" id="i_to_c"></i> <span id="to_c">--</span>%</b> 相比昨天</span></li>
 					<li class="col-xs-6 col-lg-2"><span class="title"><i
 							class="fa fa-shopping-cart"></i> 本周订单数</span>
-						<h3>---</h3> <span class="diff"><b class="color-down"><i
-								class="fa fa-caret-down"></i> --%</b> 相比上周</span></li>
+						<h3 id="thisweek_on">---</h3> <span class="diff"><b id="b_two_c" class="color-down"><i
+								class="fa fa-caret-down" id="i_two_c"></i> <span id="two_c">--</span>%</b> 相比上周</span></li>
 					<li class="col-xs-6 col-lg-2"><span class="title"><i
 							class="fa fa-eye"></i> 今日访问量</span>
-						<h3 class="color-up">---</h3> <span class="diff"><b
-							class="color-down"><i class="fa fa-caret-down"></i> --%</b> 相比昨天</span>
+						<h3 id="vn">---</h3> <span class="diff"><b
+							class="color-down" id="b_vn_c"><i class="fa fa-caret-down" id="i_vn_c"></i> <span id="vn_c">--</span>%</b> 相比昨天</span>
 					</li>
-					<li class="col-xs-6 col-lg-2"><br /> <a href="#"
+					<li class="col-xs-6 col-lg-2"><br /> <a href="javascript:loadOverviewData();"
 						class="btn btn-light"><i class="fa fa-refresh"></i></a></li>
 				</ul>
 
@@ -227,14 +227,14 @@
 						<div class="panel-title">
 							未处理订单 <span class="label label-danger">--</span>
 							<ul class="panel-tools">
-								<li><a class="icon"><i class="fa fa-refresh"></i></a></li>
+								<li><a class="icon" href="javascript:loadUntreatedOrder();"><i class="fa fa-refresh"></i></a></li>
 								<li><a class="icon closed-tool"><i class="fa fa-times"></i></a></li>
 							</ul>
 						</div>
 						<div class="panel-body table-responsive">
 
 							<table class="table table-dic table-hover ">
-								<tbody>
+								<tbody id="order_content">
 									<tr>
 										<td><i class="fa fa-shopping-cart"></i>---</td>
 										<td>---</td>

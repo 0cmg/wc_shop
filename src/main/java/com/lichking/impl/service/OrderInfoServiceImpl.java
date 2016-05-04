@@ -1,5 +1,7 @@
 package com.lichking.impl.service;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -40,6 +42,11 @@ public class OrderInfoServiceImpl implements IOrderInfoService {
 	@Override
 	public int deleteByPK(String pk) {
 		return this.orderInfoDAO.deleteByPrimaryKey(pk);
+	}
+
+	@Override
+	public List<OrderInfoVO> selectByDate(HashMap<String, Date> map) {
+		return this.orderInfoDAO.selectByDate(map);
 	}
 
 }

@@ -46,6 +46,18 @@
       and status = #{status,jdbcType=SMALLINT}
     </if>
   </select>
+  <select id="selectByDate" resultMap="BaseResultMap" parameterType="java.util.HashMap" >
+  	select
+  	<include refid="Base_Column_List" />
+    from OrderInfo
+    where 1=1
+    <if test="before != null">
+    	and dealTime &gt;= #{before,jdbcType=TIMESTAMP}
+    </if>
+    <if test="after != null">
+    	and dealTime &lt;= #{after,jdbcType=TIMESTAMP}
+    </if>
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from OrderInfo
     where orderNo = #{orderno,jdbcType=VARCHAR}

@@ -66,9 +66,9 @@ public class BMOrderDataController {
 		int r = this.orderInfoService.updateByPKSelective(queryvo);
 		if(r == 1){
 			result.setResult(true);
+		}else{
+			result.setResult(false);
 		}
-		result.setResult(false);
-		
 		return result;
 	}
 	

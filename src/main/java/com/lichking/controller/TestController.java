@@ -2,8 +2,12 @@ package com.lichking.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import com.lichking.itf.service.IOrderInfoService;
 import com.lichking.logicalprocessor.MenuProcessor;
-import com.lichking.util.DateFormatUtil;
+import com.lichking.pojo.web.OrderInfoVO;
+import com.lichking.util.DateUtil;
 import com.lichking.util.FileUtil;
 
 /**
@@ -29,6 +35,9 @@ import com.lichking.util.FileUtil;
 public class TestController {
 
 	Logger log = Logger.getLogger(TestController.class);
+	
+	@Resource
+	private IOrderInfoService orderInfoService;
 	
 	@RequestMapping(value = "testupload", method = RequestMethod.POST, produces = "text/html;charset=utf-8")
 	@ResponseBody
@@ -74,8 +83,18 @@ public class TestController {
 	
 	@RequestMapping("/test")
 	public String vTest(){
-		String dt = DateFormatUtil.getDateTime();
-		System.out.println(dt);
+		System.out.println("现在："+DateUtil.getDateTime(new Date()));
+		System.out.println("今天0点："+DateUtil.getDateTime(DateUtil.getTodayZero()));
+		System.out.println("明天0点："+DateUtil.getDateTime(DateUtil.getTomorrowZero()));
+		System.out.println("本周第一天0点："+DateUtil.getDateTime(DateUtil.getThisWeekZero()));
+		System.out.println("上周第一天0点："+DateUtil.getDateTime(DateUtil.getLastWeekZero()));
+		HashMap<String,Date> map = new HashMap<String,Date>();
+		map.put("before", DateUtil.getLastWeekZero());
+		map.put("after", DateUtil.getThisWeekZero());
+		List<OrderInfoVO> oivo_list = this.orderInfoService.selectByDate(map);
+		for(OrderInfoVO oivo : oivo_list){
+			System.out.println(oivo.getValue()+" "+oivo.getDealtime());
+		} 
 		return "test/test";
 	}
 	

@@ -60,7 +60,7 @@ function op_pay(i){
 		contentType : 'application/json;charset=utf-8',
 		type:"post",
 		success:function(data){
-			if(date.result)
+			if(data.result)
 				refresh();
 			else{
 				alert("操作失败！");
