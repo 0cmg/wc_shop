@@ -10,10 +10,6 @@ $("#com_load").bind("click",function(){
       $up += "<div id=\"uploadfileQueue\"></div>";
 	$("#upload").html($up);
 	getTypesAndCreate();
-	/*<input type="file" name="uploadify" id="file_upload" />  
-      <a href="javascript:$('#file_upload').uploadify('upload','*')">开始上传</a>&nbsp;     
-      <a href="javascript:$('#file_upload').uploadify('cancel', '*')">取消上传</a>
-	*/
 	//alert("111");
     $("#uploadify").uploadify({
         //是否自动上传 true or false
@@ -23,20 +19,6 @@ $("#com_load").bind("click",function(){
         'successTimeout':99999,
         //附带值 JSON对象数据，将与每个文件一起发送至服务器端。
         //如果为动态值，请在onUploadStart()中使用settings()方法更改该JSON值
-        /*
-       'formData':{       //可以不写
-    	   'user.username':'',
-    	   'user.age':''
-    	   },  
-    	    'onUploadStart': function(file) { 
-    	    	var name=$('#username').val();
-    	    	var age=$('#age').val();
-    	    	$("#file_upload").uploadify(
-    	    	"settings", 
-    	    	"formData", 
-    	    	{'user.username':name,'user.age':age});
-    	    	}, 
-    	    	*/
         'buttonClass' : 'btn btn-default btn-upload',
         //flash
         'swf': "/wc_shop/uploadify/uploadify.swf",
@@ -60,10 +42,6 @@ $("#com_load").bind("click",function(){
         //允许上传的文件后缀
         'fileTypeExts':'*.jpg;*.jpge;*.gif;*.png' ,// 有哪些？？
         'cancelImg' : '/wc_shop/uploadify/uploadify-cancel.png',
-        /*上传文件的大小限制允许上传文件的最大 大小。 这个值可以是一个数字或字 符串。
-          如果它是一个字符串，它接受一个单位(B, KB, MB, or GB)。
-          默认单位为KB您可以将此值设置为0 ，没有限制, 
-          单个文件不允许超过所设置的值 如果超过 onSelectError时间被触发*/
         'fileSizeLimit':'500KB',
         //允许上传的文件的最大数量。当达到或超过这个数字，onSelectError事件被触发。
         'queueSizeLimit' : 3,

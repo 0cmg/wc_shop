@@ -179,6 +179,11 @@ public class HomeController {
 		return "error";
 	}
 	
+	@RequestMapping(value="/myorder")
+	public String vMyOrder(){
+		return "front/myorder";
+	}
+	
 	//访问量统计
 	private void TrafficStatistics(){
 		

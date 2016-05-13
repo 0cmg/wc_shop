@@ -28,8 +28,8 @@
 	<div class="weui_tab">
 		<div class="weui_navbar">
 			<div class="weui_navbar_item weui_bar_item_on"><a href="main">商城首页</a></div>
-			<div class="weui_navbar_item">快递查询</div>
-			<div class="weui_navbar_item">我的订单</div>
+			<div class="weui_navbar_item"></div>
+			<div class="weui_navbar_item"><a href="myorder">我的订单</a></div>
 		</div>
 		<div class="weui_tab_bd">
 			<div class="weui_cells_title">联系方式</div>

@@ -23,7 +23,7 @@ import com.lichking.util.DateUtil;
 
 @Controller
 @RequestMapping("/back/data")
-public class BMOverviewDateController {
+public class BMOverviewDataController {
 
 	@Resource
 	private IVisitorsService visitorsService;
@@ -31,7 +31,7 @@ public class BMOverviewDateController {
 	@Resource
 	private IOrderInfoService orderInfoService;
 	
-	Logger logger = Logger.getLogger(BMOverviewDateController.class);
+	Logger logger = Logger.getLogger(BMOverviewDataController.class);
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping(value="/getOverviewData",method=RequestMethod.GET)

@@ -24,7 +24,7 @@
 	<div class="weui_navbar">
 		<div class="weui_navbar_item "><a href="/wc_shop/home/main">商城首页</a></div>
 		<div class="weui_navbar_item"></div>
-		<div class="weui_navbar_item">我的订单</div>
+		<div class="weui_navbar_item"><a href="myorder">我的订单</a></div>
 	</div>
 	<div class="weui_tab_bd" style="padding-top:30px;">
 		<div class="weui_cells_title">我的购物车</div>
