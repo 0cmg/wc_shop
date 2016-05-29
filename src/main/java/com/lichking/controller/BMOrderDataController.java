@@ -1,7 +1,9 @@
 package com.lichking.controller;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -161,7 +163,9 @@ public class BMOrderDataController {
 		boolean status = true;
 		String detail = uvo.getOrderdetails();
 		JSONObject jsonDetail = JSONObject.fromObject(detail);
-		OrderDetailsVO odvo = (OrderDetailsVO)JSONObject.toBean(jsonDetail, OrderDetailsVO.class);
+		Map<String, Class> classMap = new HashMap<String, Class>();
+		classMap.put("scan_list", SimpleCANVO.class);
+		OrderDetailsVO odvo = (OrderDetailsVO)JSONObject.toBean(jsonDetail, OrderDetailsVO.class,classMap);
 		if(odvo == null)
 			return false;
 		List<SimpleCANVO> scanvo_list = odvo.getScan_list();
