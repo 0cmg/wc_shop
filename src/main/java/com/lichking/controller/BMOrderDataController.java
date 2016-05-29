@@ -6,6 +6,8 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import net.sf.json.JSONObject;
+
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,11 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.lichking.itf.service.ICommodityInfoService;
 import com.lichking.itf.service.IExpressInfoService;
 import com.lichking.itf.service.IOrderInfoService;
+import com.lichking.pojo.web.CommodityInfoVO;
 import com.lichking.pojo.web.ExpressInfoVO;
 import com.lichking.pojo.web.OrderInfoVO;
 import com.lichking.pojo.web.ResultVO;
+import com.lichking.pojo.web.co.OrderDetailsVO;
+import com.lichking.pojo.web.co.go.SimpleCANVO;
 import com.lichking.util.StringUtil;
 
 
@@ -33,6 +39,9 @@ public class BMOrderDataController {
 	
 	@Resource
 	private IExpressInfoService expressInfoService;
+	
+	@Resource
+	private ICommodityInfoService commodityInfoService;
 	
 	@RequestMapping(value="/queryUntreatedOrder",method=RequestMethod.GET)
 	public @ResponseBody ResultVO queryUntreatedOrder(){
@@ -128,7 +137,9 @@ public class BMOrderDataController {
 				Short status = 2;
 				uvo.setStatus(status);
 				int r2 = this.orderInfoService.updateByPKSelective(uvo);
-				if(r2 == 1){
+				uvo = this.orderInfoService.selectByPK(eivo.getOrderno());
+				boolean s = updateComSell(uvo);
+				if(r2 == 1 && s){
 					result.setResult(true);
 				}else{
 					result.setResult(false);
@@ -144,5 +155,28 @@ public class BMOrderDataController {
 		
 		return result;
 	}
+	
+	//更新商品的库存和已售数量
+	private boolean updateComSell(OrderInfoVO uvo){
+		boolean status = true;
+		String detail = uvo.getOrderdetails();
+		JSONObject jsonDetail = JSONObject.fromObject(detail);
+		OrderDetailsVO odvo = (OrderDetailsVO)JSONObject.toBean(jsonDetail, OrderDetailsVO.class);
+		if(odvo == null)
+			return false;
+		List<SimpleCANVO> scanvo_list = odvo.getScan_list();
+		for(SimpleCANVO scanvo : scanvo_list){
+			Integer id = scanvo.getCom_id();
+			Integer num = scanvo.getCom_num();
+			CommodityInfoVO cvo = this.commodityInfoService.selectByPK(id);
+			cvo.setSellno(cvo.getSellno()+num);
+			cvo.setRestno(cvo.getRestno()-num);
+			int r = this.commodityInfoService.updateComByPKSelective(cvo);
+			if(r != 1){
+				status = false;
+			}
+		}
+		return status;
+ 	}
 	
 }
